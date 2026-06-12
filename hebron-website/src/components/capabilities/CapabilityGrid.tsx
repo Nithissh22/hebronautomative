@@ -1,0 +1,96 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { capabilitiesList } from './capabilityData';
+import './CapabilityGrid.css';
+
+interface CapabilityGridProps {
+  onSelect: (index: number) => void;
+}
+
+export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    const video = e.currentTarget.querySelector('video');
+    if (video) {
+      video.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    const video = e.currentTarget.querySelector('video');
+    if (video) {
+      video.pause();
+    }
+  };
+
+  return (
+    <div className={`capability-grid-container ${mounted ? 'is-mounted' : ''}`}>
+      
+      <div className="capability-grid-header">
+        <span className="grid-header-eyebrow">● WHAT WE DO</span>
+        <h2 className="grid-header-title">
+          {"Five Capabilities. One Supply Chain.".split(' ').map((word, i) => (
+            <span key={i} style={{ animationDelay: `${i * 80}ms` }} className="word-reveal">{word}&nbsp;</span>
+          ))}
+        </h2>
+        <p className="grid-header-sub">Click any capability to explore our full technical specifications.</p>
+      </div>
+
+      <div className="capability-grid">
+        {capabilitiesList.map((cap, index) => {
+          let area = 'die-casting';
+          if (index === 1) area = 'machining';
+          if (index === 2) area = 'powder-coating';
+          if (index === 3) area = 'sub-assembly';
+          if (index === 4) area = 'quality';
+
+          return (
+            <div 
+              key={cap.id}
+              className={`grid-card grid-card--${area}`}
+              style={{ gridArea: area, animationDelay: `${index * 120}ms` }}
+              onClick={() => onSelect(index)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              role="button"
+              tabIndex={0}
+              aria-label={`Explore ${cap.title} capabilities`}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onSelect(index); }}
+            >
+              <div className="grid-card__bg">
+                <video src={cap.videoSrc} muted loop playsInline preload="auto" />
+              </div>
+              <div className="grid-card__content">
+                <span className="grid-card__number">{cap.number}</span>
+                <h3 className="grid-card__title">{cap.title}</h3>
+                <svg className="grid-card__icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
+      <div className="capability-grid-footer">
+        <div className="footer-cta-band">
+          <p>Ready to partner with us?</p>
+          <div className="footer-cta-buttons">
+            <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              Request a Quote →
+            </button>
+            <a href="#" className="btn-outline" onClick={(e) => e.preventDefault()}>
+              Download Capabilities Deck
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  );
+}

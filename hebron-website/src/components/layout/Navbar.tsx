@@ -29,7 +29,7 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
   }, []);
 
   return (
-    <header className={`nav ${scrolled ? 'nav--solid' : ''}`}>
+    <header className={`nav ${scrolled ? 'nav--solid' : ''} ${theme === 'light' ? 'nav--light' : ''}`}>
 
       <NavLink href="/" className="nav__brand">
         <img src="/logo.png" alt="Hebron Automotive" className="nav__logo" />

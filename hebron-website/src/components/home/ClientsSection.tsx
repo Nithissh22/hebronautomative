@@ -15,7 +15,6 @@ export default function ClientsSection() {
 
         <div className="clients-sec__logos">
           <img src="/clients/gabriel.png" alt="Gabriel India" className="client-logo" />
-          <img src="/clients/hitachi.png" alt="Hitachi Astemo" className="client-logo" />
           <img src="/clients/ather.png" alt="Ather Energy" className="client-logo" />
           <img src="/clients/tvs.png" alt="TVS Motor Company" className="client-logo" />
         </div>

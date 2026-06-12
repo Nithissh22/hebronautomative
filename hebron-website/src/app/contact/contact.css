@@ -4,18 +4,20 @@
 
 .contact-hero {
   padding: 180px 0 100px;
-  background: var(--brand-navy);
+  background: url('/images/contact-hero-bg.png') center/cover no-repeat;
   color: var(--bg-white);
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .contact-hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% 120%, rgba(14, 163, 228, 0.15), transparent 60%);
+  background: linear-gradient(to bottom, rgba(14, 26, 92, 0.9) 0%, rgba(14, 26, 92, 0.7) 100%);
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -150,7 +152,6 @@
   width: 100%;
   height: 280px;
   display: block;
-  filter: grayscale(100%) contrast(1.2); /* Make map look modern and clean */
 }
 
 /* ── FORM PANEL ── */

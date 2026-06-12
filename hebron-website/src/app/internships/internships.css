@@ -336,6 +336,18 @@
   background: var(--brand-navy);
   color: var(--bg-white);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80%; height: 60%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .learn-section .careers-label {
@@ -360,18 +372,57 @@
 }
 
 .learn-col {
-  background: rgba(255,255,255,0.05);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
   padding: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.learn-col::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.learn-col:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 180, 216, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 180, 216, 0.1);
+}
+
+.learn-col:hover::after {
+  opacity: 1;
 }
 
 .learn-col__title {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-mono), 'Space Grotesk', sans-serif;
   font-size: 14px;
   color: var(--brand-cyan);
   letter-spacing: 0.1em;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.learn-col__title::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  box-shadow: 0 0 10px var(--brand-cyan);
 }
 
 .learn-list {
@@ -383,9 +434,16 @@
 .learn-list li {
   font-size: 15px;
   margin-bottom: 16px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.7);
   padding-left: 24px;
   position: relative;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: default;
+}
+
+.learn-list li:hover {
+  transform: translateX(4px);
+  color: #ffffff;
 }
 
 .learn-list li::before {
@@ -393,6 +451,12 @@
   position: absolute;
   left: 0;
   color: var(--brand-cyan);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.learn-list li:hover::before {
+  opacity: 1;
 }
 
 /* ── BENEFITS SECTION ── */

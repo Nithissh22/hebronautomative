@@ -1,8 +1,18 @@
 /* Hero section */
 .about-hero {
-  background: var(--bg-dark);        /* #07243D */
+  position: relative;
+  background: url('/images/about-hero-bg.png') center/cover no-repeat;
   padding: 120px 0 80px;
   min-height: 50vh;
+  z-index: 1;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(7, 36, 61, 0.95) 0%, rgba(7, 36, 61, 0.7) 100%);
+  z-index: -1;
 }
 
 .about-hero h1,

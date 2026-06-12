@@ -86,7 +86,7 @@
 
 .new-cert-card {
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   width: 320px;
@@ -95,6 +95,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+}
+
+.new-cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--brand-cyan, #0ea5e9);
 }
 
 .cert-header {
@@ -251,26 +260,38 @@
 
 /* Tabs & Table */
 .inspection-equipment-section {
-  background: #ffffff;
-  padding: 80px 0;
-  margin-bottom: 80px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #ffffff 100%);
+  padding: 80px 0 100px;
 }
 
 .tabs-container {
-  background: #ffffff;
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 16px;
+  border: 1px solid #bae6fd;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabs-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(14, 165, 233, 0.1);
 }
 
 .tabs-header {
   display: flex;
-  gap: 32px;
-  border-bottom: 2px solid #f1f5f9;
+  gap: 8px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid #bae6fd;
   margin-bottom: 0;
 }
 
 .tab-btn {
-  background: none;
+  background: transparent;
   border: none;
-  padding: 16px 0;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -278,18 +299,22 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
   transition: all 0.2s ease;
 }
 
 .tab-btn.active {
-  color: var(--bg-dark);
-  border-bottom-color: var(--bg-dark);
+  background: #050d1f;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(5, 13, 31, 0.15);
 }
 
 .tab-btn:hover:not(.active) {
-  color: var(--brand-navy-mid);
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.tab-content {
+  padding: 0 24px 24px;
 }
 
 .clean-table {
@@ -305,8 +330,17 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #475569;
-  border-bottom: 1px solid #e2e8f0;
+  color: #64748b;
+  border-bottom: 1px solid #bae6fd;
+}
+
+.clean-table tbody tr {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.clean-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateX(4px);
 }
 
 .clean-table td {
@@ -314,51 +348,124 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 14px;
   color: #334155;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e0f2fe;
 }
 
-.fw-500 { font-weight: 500; color: #0f172a !important; }
+.clean-table tbody tr:last-child td {
+  border-bottom: none;
+}
 
-/* Process Framework Grid */
+.fw-500 { font-weight: 600; color: #050d1f !important; }
+
+/* Process Framework Redesign */
 .process-control-section {
   margin-bottom: 120px;
 }
 
-.new-process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid #e2e8f0;
-  border-left: 1px solid #e2e8f0;
+.pcf-header-area {
+  margin-bottom: 40px;
 }
 
-.new-process-cell {
-  padding: 40px 32px;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  background: #ffffff;
-}
-
-.np-label {
+.pcf-badge {
+  display: inline-block;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.1em;
-  color: #475569;
+  color: var(--brand-cyan, #0ea5e9);
+  text-transform: uppercase;
   margin-bottom: 12px;
+  border-bottom: 2px solid var(--brand-cyan, #0ea5e9);
+  padding-bottom: 4px;
 }
 
-.np-value {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+.pcf-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
   color: #0f172a;
 }
 
-/* Neon Section */
+.pcf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pcf-card {
+  --card-color: #0ea5e9; /* Light blue accent */
+  --card-bg: #f0f9ff; /* Very soft blue bg for icon */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pcf-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.pcf-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--card-color, #e2e8f0);
+}
+
+.pcf-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--card-bg, #f8fafc);
+  color: var(--card-color, #64748b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.pcf-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.pcf-desc {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.pcf-tagline {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--card-color, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Colors */
+/* Unified blue & white theme used by default */
+
 .neon-section {
-  background: var(--bg-dark);
+  background: linear-gradient(135deg, rgba(5, 13, 31, 0.95) 0%, rgba(5, 13, 31, 0.75) 50%, rgba(5, 13, 31, 0.4) 100%), url('/xray_bg.png') no-repeat center center / cover;
   padding: 100px 0;
+  position: relative;
 }
 
 .neon-header {
@@ -366,8 +473,10 @@
 }
 
 .neon-card {
-  background: rgba(7, 36, 61, 0.4);
-  border: 1px solid #0ea5e9;
+  background: rgba(7, 36, 61, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 165, 233, 0.3);
   border-radius: 12px;
   padding: 48px;
   box-shadow: 0 0 30px rgba(14, 165, 233, 0.2), inset 0 0 20px rgba(14, 165, 233, 0.1);
@@ -424,9 +533,9 @@
 
 @media (max-width: 1024px) {
   .certifications-grid { flex-direction: column; align-items: center; }
-  .kpi-grid, .new-process-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .pcf-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .kpi-grid, .new-process-grid { grid-template-columns: 1fr; }
+  .kpi-grid, .pcf-grid { grid-template-columns: 1fr; }
   .tabs-header { flex-wrap: wrap; }
 }

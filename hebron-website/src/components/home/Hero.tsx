@@ -37,10 +37,9 @@ export default function Hero() {
             </span>
 
             <h1 className="hero__h1">
-              Precision<br/>
-              Die Casting<br/>
-              <em>for</em> Automotive<br/>
-              Assembly Lines
+              <span className="hero__company-name">HEBRON AUTOMOTIVE</span><br/>
+              Precision Die Casting<br/>
+              <em>for</em> Automotive Assembly Lines
             </h1>
 
             <p className="hero__sub">
