@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { usePathname } from 'next/navigation';
 import NavLink from '@/components/ui/NavLink';
 import './Navbar.css';
@@ -14,7 +14,11 @@ const NAV_LINKS = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  theme?: string;
+}
+
+const Navbar: FC<NavbarProps> = ({ theme }) => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -53,4 +57,6 @@ export default function Navbar() {
 
     </header>
   );
-}
+};
+
+export default Navbar;
