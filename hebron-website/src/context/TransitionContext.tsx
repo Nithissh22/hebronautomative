@@ -1,7 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface TransitionContextType {
   isTransitioning: boolean;
@@ -13,44 +13,39 @@ const TransitionContext = createContext<TransitionContextType | undefined>(undef
 export function TransitionProvider({ children }: { children: ReactNode }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Whenever the pathname changes, navigation has completed.
+    // We set a small timeout to allow the exit animation to look smooth.
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 400); // 400ms minimum transition time
+      return () => clearTimeout(timer);
+    }
+  }, [pathname, isTransitioning]);
 
   const startTransition = useCallback(
     (href: string) => {
       // If we are already transitioning, don't start a new one
       if (isTransitioning) return;
       
-      // Minimum duration 400ms. We use 400ms here, but to be safe against quick flashing, 
-      // let's wait 400ms minimum before allowing it to hide.
+      // If navigating to the same page, do not trigger transition loader
+      if (href === pathname || href.startsWith(pathname + '?') || href.startsWith(pathname + '#')) {
+        router.push(href);
+        return;
+      }
+
       setIsTransitioning(true);
-      
-      const startTime = Date.now();
-      
-      // Start the route transition immediately but keep the loader visible for minimum 400ms
       router.push(href);
       
-      const checkAndHide = () => {
-        const elapsedTime = Date.now() - startTime;
-        if (elapsedTime >= 400) {
-          // If 400ms has passed, hide
-          setIsTransitioning(false);
-        } else {
-          // Otherwise wait for the remainder
-          setTimeout(() => setIsTransitioning(false), 400 - elapsedTime);
-        }
-      };
-
-      // In Next.js App Router, router.push is not a Promise that resolves when done,
-      // so we rely on the 400ms hold. If the actual navigation takes longer, 
-      // next.js handles it behind the scenes, but typically it's very fast locally.
-      // Wait a moment for navigation to kick in, then hide. 
-      // Let's hold for 600ms total to ensure smooth animation and transition.
-      // The user suggested 600ms if 400 flashes too fast.
+      // Fallback in case navigation fails or is aborted
       setTimeout(() => {
          setIsTransitioning(false);
-      }, 600);
-      
+      }, 3000);
     },
-    [router, isTransitioning]
+    [router, isTransitioning, pathname]
   );
 
   return (

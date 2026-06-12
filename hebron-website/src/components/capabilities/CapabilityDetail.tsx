@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { capabilitiesList } from './capabilityData';
 import MiniNav from './MiniNav';
 import './CapabilityDetail.css';
@@ -13,10 +13,13 @@ interface CapabilityDetailProps {
 export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuoteRequest }: CapabilityDetailProps) {
   const cap = capabilitiesList[activeIndex];
   const [activeTab, setActiveTab] = useState<'equipment' | 'inventory' | 'process'>('equipment');
+  const [prevIndex, setPrevIndex] = useState(activeIndex);
 
-  useEffect(() => {
+  // Derived state pattern instead of useEffect to avoid cascading render error
+  if (activeIndex !== prevIndex) {
+    setPrevIndex(activeIndex);
     setActiveTab('equipment');
-  }, [activeIndex]);
+  }
 
   return (
     <div className="capability-detail-container" role="region" aria-label={`${cap.title} Details`}>
@@ -29,7 +32,10 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
       <div className="detail-split">
         {/* Left Panel */}
         <div className="detail-media-panel">
-          <video src={cap.videoSrc} autoPlay muted loop playsInline preload="auto" className="detail-media-video" />
+          <video autoPlay muted loop playsInline preload="auto" className="detail-media-video">
+            <source src={cap.videoSrc.replace('.mp4', '.webm')} type="video/webm" />
+            <source src={cap.videoSrc} type="video/mp4" />
+          </video>
           <div className="detail-media-gradient"></div>
           
           <div className="detail-media-watermark">
@@ -116,3 +122,4 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
     </div>
   );
 }
+

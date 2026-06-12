@@ -9,17 +9,26 @@ export default function PageLoader() {
   const [renderState, setRenderState] = useState<'hidden' | 'enter' | 'exit'>('hidden');
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
+
     if (isTransitioning) {
       setRenderState('enter');
-    } else if (renderState === 'enter') {
-      setRenderState('exit');
-      
-      // Clean up after exit animation (250ms)
-      const timer = setTimeout(() => {
-        setRenderState('hidden');
-      }, 250);
-      return () => clearTimeout(timer);
+    } else {
+      setRenderState((prev) => {
+        if (prev === 'enter') {
+          // Trigger exit animation
+          timer = setTimeout(() => {
+            setRenderState('hidden');
+          }, 250);
+          return 'exit';
+        }
+        return prev;
+      });
     }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, [isTransitioning]);
 
   if (renderState === 'hidden') return null;

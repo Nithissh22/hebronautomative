@@ -20,6 +20,7 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ theme }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,14 +29,29 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   return (
-    <header className={`nav ${scrolled ? 'nav--solid' : ''} ${theme === 'light' ? 'nav--light' : ''}`}>
+    <header className={`nav ${scrolled ? 'nav--solid' : ''} ${theme === 'light' ? 'nav--light' : ''} ${mobileMenuOpen ? 'nav--mobile-open' : ''}`}>
 
       <NavLink href="/" className="nav__brand">
         <img src="/logo.png" alt="Hebron Automotive" className="nav__logo" />
       </NavLink>
 
-      <nav className="nav__links">
+      <nav className={`nav__links ${mobileMenuOpen ? 'nav__links--open' : ''}`}>
         {NAV_LINKS.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -43,6 +59,7 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
               key={link.label}
               href={link.href} 
               className={isActive ? 'active' : ''}
+              onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
             </NavLink>
@@ -50,10 +67,22 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
         })}
       </nav>
 
-      <NavLink href="/contact" className="nav__cta">
-        Request Quote
-        <span className="nav__cta-arrow">→</span>
-      </NavLink>
+      <div className="nav__right">
+        <NavLink href="/contact" className="nav__cta">
+          Request Quote
+          <span className="nav__cta-arrow">→</span>
+        </NavLink>
+
+        <button 
+          className={`nav__mobile-toggle ${mobileMenuOpen ? 'is-open' : ''}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
 
     </header>
   );

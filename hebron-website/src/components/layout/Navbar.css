@@ -73,6 +73,12 @@
   box-shadow: 0 1px 0 rgba(5, 13, 31, 0.08);
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .nav__cta {
   display: flex;
   align-items: center;
@@ -102,6 +108,51 @@
   transform: translateX(3px);
 }
 
+.nav__mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav--light .hamburger-line {
+  background-color: #050d1f;
+}
+
+.nav--mobile-open .hamburger-line,
+.nav--mobile-open.nav--light .hamburger-line {
+  background-color: white;
+}
+
+.nav__mobile-toggle.is-open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__mobile-toggle.is-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__mobile-toggle.is-open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 1200px) {
   .nav {
     padding-left: 40px;
@@ -109,7 +160,55 @@
   }
 }
 
+@media (max-width: 900px) {
+  .nav__links {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
-  .nav { padding: 0 24px; }
-  .nav__links { display: none; }
+  .nav { padding: 0 20px; }
+  
+  .nav__mobile-toggle {
+    display: flex;
+  }
+
+  .nav__cta {
+    display: none; /* Hide standard CTA on mobile to save space */
+  }
+
+  /* Full screen mobile menu overlay */
+  .nav__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav__links--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__links a {
+    font-size: 24px;
+    color: white;
+  }
+  
+  .nav--mobile-open {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { capabilitiesList } from './capabilityData';
 import './CapabilityGrid.css';
 
@@ -10,7 +10,8 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 10);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -62,7 +63,10 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onSelect(index); }}
             >
               <div className="grid-card__bg">
-                <video src={cap.videoSrc} muted loop playsInline preload="auto" />
+                <video muted loop playsInline preload="auto">
+                  <source src={cap.videoSrc.replace('.mp4', '.webm')} type="video/webm" />
+                  <source src={cap.videoSrc} type="video/mp4" />
+                </video>
               </div>
               <div className="grid-card__content">
                 <span className="grid-card__number">{cap.number}</span>
