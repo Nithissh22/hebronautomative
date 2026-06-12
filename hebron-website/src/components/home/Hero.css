@@ -1,0 +1,220 @@
+/* ── HERO WRAPPER ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;       /* anchor to bottom */
+  overflow: hidden;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(14, 26, 92, 0.92) 0%,
+    rgba(14, 26, 92, 0.78) 50%,
+    rgba(14, 26, 92, 0.62) 100%
+  );
+  z-index: 1;
+}
+
+/* ── HERO CONTENT BODY ── */
+.hero__body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 48px;
+  align-items: flex-end;
+  padding: 0 72px 72px;            /* bottom anchored */
+  width: 100%;
+}
+
+/* ── LEFT COLUMN ── */
+.hero__left {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── EYEBROW — goes ABOVE h1 inside left column ── */
+.hero__left .eyebrow {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.45);   /* dim — not competing */
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ── H1 HEADING ── */
+.hero__h1 {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: clamp(32px, 4.2vw, 60px);  /* REDUCED significantly */
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin-bottom: 24px;
+  max-width: 580px;
+}
+
+/* Only em = cyan, rest = white */
+.hero__h1 em {
+  font-style: normal;
+  color: var(--brand-cyan);
+}
+
+/* ── SUBTEXT ── */
+.hero__sub {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 36px;             /* space before buttons */
+}
+
+/* ── BUTTONS ROW ── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.hero__link-plain {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  display: inline-flex;         /* inline-flex sizes to content exactly */
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  width: fit-content;           /* ← CRITICAL: prevents border stretching */
+  transition: color 200ms ease,
+              border-color 200ms ease,
+              gap 200ms ease;
+}
+
+.hero__link-plain:hover {
+  color: white;
+  border-color: var(--brand-cyan);
+  gap: 12px;
+}
+
+/* ── STAT STACK RIGHT PANEL ── */
+.hero__right {
+  align-self: flex-end;
+  padding-bottom: 0;
+}
+
+.hero__stat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10, 18, 64, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  min-width: 200px;
+  max-width: 240px;
+}
+
+.hero__stat {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-left: 2px solid var(--brand-cyan);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero__stat:last-child {
+  border-bottom: none;
+}
+
+/* Numbers — white, smaller, not competing */
+.hero__stat-value {
+  font-family: var(--font-mono), 'Space Grotesk', monospace;
+  font-size: 20px;              /* was too large before */
+  font-weight: 700;
+  color: white;                 /* white not cyan */
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.38);
+}
+
+/* ── CERT BAR — below hero, NOT inside it ── */
+.cert-bar {
+  background: var(--brand-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 72px;
+  height: 52px;
+  overflow: hidden;
+  position: relative;            /* NOT fixed or absolute */
+  z-index: 3;
+}
+
+.cert-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+.cert-bar__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .hero__body {
+    padding-left: 40px;
+    padding-right: 40px;
+    grid-template-columns: 1fr;
+  }
+  .hero__right { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero__body { padding: 0 24px 56px; }
+  .hero__h1 { font-size: 44px; }
+  .cert-bar { padding: 0 24px; overflow-x: auto; gap: 24px; }
+}

@@ -1,0 +1,79 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--bg-primary, #FFFFFF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Base state is hidden. When .loader-enter is added, it transitions in. */
+.page-loader.loader-enter {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 150ms ease-out;
+}
+
+/* When exiting, it fades out over 250ms */
+.page-loader.loader-exit {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-in;
+}
+
+.loader-logo-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner circle with text */
+.loader-inner-circle {
+  width: 52px;
+  height: 52px;
+  background-color: #1A3A7A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.loader-inner-circle span {
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+/* Outer spinning ring using SVG */
+.loader-outer-ring {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  z-index: 1;
+  animation: loaderSpin 1s linear infinite;
+}
+
+.loader-outer-ring circle {
+  fill: none;
+  stroke: #1A6FC4;
+  stroke-width: 3px;
+  /* Circumference is pi * d = 3.14159 * 69 (since viewBox is 72, radius is 34.5 so d=69) approx 216 */
+  /* We want 75% visible, 25% gap: 162 dash, 54 gap */
+  stroke-dasharray: 162 54;
+  stroke-linecap: round;
+}
+
+@keyframes loaderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
