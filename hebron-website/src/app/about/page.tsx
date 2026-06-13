@@ -5,6 +5,7 @@ import NavLink from '@/components/ui/NavLink';
 import CustomersShowcase from '@/components/about/CustomersShowcase';
 import TimelineShowcase from '@/components/about/TimelineShowcase';
 import FoundationShowcase from '@/components/about/FoundationShowcase';
+import CompanyMetrics from '@/components/about/CompanyMetrics';
 
 export default function AboutPage() {
   return (
@@ -72,6 +73,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* 5.5. Performance & Capacity */}
+        <CompanyMetrics />
 
         {/* 6. Leadership */}
         <section className="leadership-section">

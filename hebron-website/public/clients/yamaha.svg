@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <text x="100" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#E3000F" text-anchor="middle">YAMAHA</text>
+  <circle cx="100" cy="30" r="20" fill="none" stroke="#E3000F" stroke-width="3" />
+  <path d="M90,20 L110,40 M110,20 L90,40 M100,10 L100,50" stroke="#E3000F" stroke-width="2"/>
+</svg>

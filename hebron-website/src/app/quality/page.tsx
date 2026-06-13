@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
 import './quality.css';
 
@@ -86,13 +87,16 @@ export default function QualityPage() {
                   <div className="cert-header">
                     <h3 className="cert-title">IATF 16949:2016</h3>
                   </div>
+                  <div style={{ width: '100%', marginBottom: '24px' }}>
+                    <Image src="/images/IATF.jpg" alt="IATF 16949:2016 Certificate" width={400} height={560} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '4px' }} />
+                  </div>
                   <div className="cert-body">
                     <div className="cert-row"><span className="cert-lbl">Issuing Body:</span> OST Scenes</div>
                     <div className="cert-row"><span className="cert-lbl">Issue Date:</span> 16.11.2026</div>
                     <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
                     <div className="cert-row"><span className="cert-lbl">Certificate No.</span> IATF 16949:2016</div>
                   </div>
-                  <a href="/cert-iatf.pdf" className="cert-btn">Download Certificate &rarr;</a>
+                  <a href="/images/IATF.jpg" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
                 </div>
 
                 <div className="new-cert-card">

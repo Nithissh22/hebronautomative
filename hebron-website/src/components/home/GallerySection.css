@@ -1,0 +1,108 @@
+.gallery-section {
+  padding: 100px 0; /* Full bleed horizontal */
+  background-color: var(--bg-white);
+  text-align: center;
+  overflow: hidden; /* Prevent horizontal scroll on body */
+}
+
+.gallery-section__header {
+  margin-bottom: 48px;
+  padding: 0 32px;
+}
+
+.gallery-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0; /* Padding allows the popped up items to not get clipped */
+}
+
+/* Create the track that animates */
+.gallery-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  /* Auto scroll animation */
+  animation: scroll-left 50s linear infinite;
+  align-items: center;
+}
+
+/* Pause animation on hover so user can focus on a picture */
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by exactly half the width to loop perfectly */
+    transform: translateX(calc(-50% - 12px)); 
+  }
+}
+
+.gallery-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 400px;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-off);
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  /* Smooth transitions for the popup/blur effect */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s ease;
+  will-change: transform, filter;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- THE HOVER BLUR & POP-UP LOGIC --- */
+
+/* 1. When hovering ANY item in the track, slightly blur and shrink ALL items */
+.gallery-track:hover .gallery-item {
+  filter: blur(5px) brightness(0.6);
+  transform: scale(0.95);
+}
+
+/* 2. Un-blur the SPECIFIC hovered item, and pop it up aggressively */
+.gallery-track .gallery-item:hover {
+  filter: blur(0px) brightness(1.1);
+  transform: scale(1.15);
+  z-index: 10;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Optional overlay that is removed on hover for clarity */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 26, 92, 0.4) 0%, transparent 50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.gallery-track .gallery-item:hover .gallery-item__overlay {
+  opacity: 0; 
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 60px 0;
+  }
+  .gallery-item {
+    width: 280px;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12px)); }
+  }
+}

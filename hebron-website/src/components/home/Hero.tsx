@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import NavLink from '@/components/ui/NavLink';
 import './Hero.css';
 
@@ -9,19 +10,15 @@ export default function Hero() {
     <>
       <section className="hero">
 
-        {/* Video background */}
-        <video
-          className="hero__video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          poster="/images/hero-poster.jpg"
-        >
-          <source src="/video/hero.webm" type="video/webm" />
-          <source src="/video/hero.mp4"  type="video/mp4"  />
-        </video>
+        {/* Background image */}
+        <Image
+          src="/gallery/image_1135x468_1.jpg"
+          alt="Hebron Automotive Factory Background"
+          className="hero__bg-image"
+          fill
+          priority
+          sizes="100vw"
+        />
 
         {/* Dark overlay */}
         <div className="hero__overlay" />

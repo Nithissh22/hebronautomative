@@ -36,7 +36,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg-white);
   color: var(--text-body);
-  font-family: var(--font-body), 'Inter', sans-serif;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -47,7 +47,7 @@ section { position: relative; }
 
 /* Global label style */
 .eyebrow {
-  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ section { position: relative; }
 
 /* Section heading pattern */
 .section-heading {
-  font-family: var(--font-display), 'Syne', sans-serif;
+  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 700;
   color: var(--text-dark);
@@ -82,14 +82,14 @@ section { position: relative; }
 
 /* Spec data text */
 .spec-value {
-  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: var(--text-dark);
 }
 
 .spec-label {
-  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
@@ -104,7 +104,7 @@ section { position: relative; }
   gap: 10px;
   background: var(--brand-navy);
   color: white;
-  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -127,7 +127,7 @@ section { position: relative; }
   gap: 10px;
   background: transparent;
   color: var(--brand-navy);
-  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -201,7 +201,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), 'Syne', sans-serif;
+  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.05;

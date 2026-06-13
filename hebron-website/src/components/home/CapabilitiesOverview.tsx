@@ -12,12 +12,12 @@ export default function CapabilitiesOverview() {
         </h2>
         <div className="heading-rule" />
       </div>
-
       <div className="cap-overview__grid">
         {[
           {
             num: '01',
             title: 'High Pressure Die Casting',
+            id: 'die-casting',
             specs: [
               ['Tonnage', '120T – 800T'],
               ['Machines', '7 PDC Lines'],
@@ -28,6 +28,7 @@ export default function CapabilitiesOverview() {
           {
             num: '02',
             title: 'VMC / CNC Machining',
+            id: 'cnc-machining',
             specs: [
               ['Centers', '3/4/5-axis'],
               ['Make', 'HAAS USA'],
@@ -38,6 +39,7 @@ export default function CapabilitiesOverview() {
           {
             num: '03',
             title: 'Gravity Die Casting',
+            id: 'die-casting',
             specs: [
               ['GDC Units', '7 Machines'],
               ['Furnaces', '3 Melting + 1 Holding'],
@@ -48,6 +50,7 @@ export default function CapabilitiesOverview() {
           {
             num: '04',
             title: 'Powder Coating',
+            id: 'powder-coating',
             specs: [
               ['Lines', '2 Semi-Auto Lines'],
               ['Testing', 'DFT Meter Lab'],
@@ -69,7 +72,7 @@ export default function CapabilitiesOverview() {
                 </div>
               ))}
             </div>
-            <NavLink href="/capabilities" className="cap-card__link">
+            <NavLink href={`/capabilities${cap.id ? `?id=${cap.id}` : ''}`} className="cap-card__link">
               View Details →
             </NavLink>
           </div>

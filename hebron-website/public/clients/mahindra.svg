@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <text x="100" y="65" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#E31837" text-anchor="middle">Mahindra</text>
+  <path d="M100,10 C120,10 140,20 140,40 C140,20 120,30 100,30 C80,30 60,20 60,40 C60,20 80,10 100,10 Z" fill="#E31837" />
+  <ellipse cx="100" cy="25" rx="35" ry="15" fill="none" stroke="#E31837" stroke-width="3"/>
+</svg>

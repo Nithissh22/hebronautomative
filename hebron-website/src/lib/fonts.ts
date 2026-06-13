@@ -1,22 +1,22 @@
-import { Syne, Inter, Space_Grotesk } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 
-export const fontDisplay = Syne({
+export const fontDisplay = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 });
 
-export const fontBody = Inter({
+export const fontBody = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-body',
   display: 'swap',
 });
 
-export const fontMono = Space_Grotesk({
+export const fontMono = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-mono',
   display: 'swap',
 });

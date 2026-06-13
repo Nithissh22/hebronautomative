@@ -1,9 +1,10 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import CapabilityGrid from '@/components/capabilities/CapabilityGrid';
 import CapabilityDetail from '@/components/capabilities/CapabilityDetail';
 import { capabilitiesList } from '@/components/capabilities/capabilityData';
+import { useSearchParams } from 'next/navigation';
 import './capabilities.css';
 
 const DRAWER_DATA = {
@@ -29,11 +30,24 @@ const DRAWER_DATA = {
   }
 };
 
-export default function CapabilitiesPage() {
+function CapabilitiesContent() {
+  const searchParams = useSearchParams();
+  const idQuery = searchParams ? searchParams.get('id') : null;
+
   const [mode, setMode] = useState<'overview' | 'detail'>('overview');
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (idQuery) {
+      const index = capabilitiesList.findIndex(c => c.id === idQuery);
+      if (index !== -1) {
+        setActiveIndex(index);
+        setMode('detail');
+      }
+    }
+  }, [idQuery]);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -136,5 +150,13 @@ export default function CapabilitiesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CapabilitiesPage() {
+  return (
+    <Suspense fallback={<div className="page-fade-in"><Navbar theme="light" /><div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading...</div></div>}>
+      <CapabilitiesContent />
+    </Suspense>
   );
 }
