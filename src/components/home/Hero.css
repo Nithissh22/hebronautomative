@@ -1,0 +1,201 @@
+/* ── HERO WRAPPER ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;       /* anchor to bottom */
+  overflow: hidden;
+}
+
+.hero__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(14, 26, 92, 0.7) 0%,
+    rgba(14, 26, 92, 0.4) 50%,
+    rgba(14, 26, 92, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* ── HERO CONTENT BODY ── */
+.hero__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 72px 32px; /* Reduced bottom padding to push text down */
+  width: 100%;
+}
+
+.hero__center {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── EYEBROW ── */
+.hero__center .eyebrow {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ── H1 HEADING ── */
+.hero__h1 {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: clamp(24px, 3.5vw, 48px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.hero__company-name {
+  font-size: clamp(16px, 2vw, 24px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.8);
+}
+
+.hero__main-heading {
+  font-size: clamp(36px, 5vw, 64px);
+  color: white;
+}
+
+/* Only em = cyan, rest = white */
+.hero__h1 em {
+  font-style: normal;
+  color: var(--brand-cyan);
+}
+
+/* ── SUBTEXT ── */
+.hero__sub {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+/* ── BUTTONS ROW ── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 24px;
+  text-decoration: none;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--bg-dark);
+}
+
+
+
+/* ── CERT BAR — below hero, NOT inside it ── */
+.cert-bar {
+  background: #000;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.cert-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%);
+  pointer-events: none;
+}
+
+.cert-bar-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: cert-marquee 20s linear infinite;
+}
+
+.cert-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-right: 48px;
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.cert-bar__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  flex-shrink: 0;
+}
+
+@keyframes cert-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 1200px) {
+  .hero__body {
+    padding-left: 40px;
+    padding-right: 40px;
+    grid-template-columns: 1fr;
+  }
+  .hero__right { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero__body { padding: 0 24px 56px; }
+  .hero__h1 { font-size: 44px; }
+  .cert-bar { padding: 0 24px; overflow-x: auto; gap: 24px; }
+}
