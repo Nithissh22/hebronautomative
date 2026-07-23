@@ -23,7 +23,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
 
   const carouselImages = [
     '/images/die-casting-parts.png',
-    '/images/hpdc_cap.jpg',
+    '/images/hpdc_machine_uploaded.jpg',
     '/images/vmc_machine_uploaded.jpg',
     '/images/quality-inspection.jpg',
     '/images/powder-coating.png'

@@ -45,7 +45,7 @@ export default function CapabilitiesOverview() {
               ['Tonnage', '120T – 800T'],
               ['Alloys', '-ADC12\n-AC2BF\nAluminium Alloys'],
             ],
-            image: '/images/hpdc_cap.jpg',
+            image: '/images/hpdc_machine_uploaded.jpg',
           },
           {
             num: '02',
