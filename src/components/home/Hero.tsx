@@ -25,13 +25,12 @@ export default function Hero() {
         {/* Dark overlay */}
         <div className="hero__overlay" />
 
-        {/* Content — split layout to balance text with corner image */}
-        <div className="hero__body hero__body--split">
-          {/* Left: text column */}
+        {/* Content — perfectly centred on the full page */}
+        <div className="hero__body">
           <div className="hero__center">
             <h1 className="hero__h1">
               <span className="hero__company-name">HEBRON AUTOMOTIVE PRODUCTS</span>
-              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em', display: 'block' }}>Precision Die Casting components</span>
+              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em', display: 'block', textAlign: 'center' }}>Precision Die Casting components</span>
             </h1>
 
             <div className="hero__actions">
@@ -40,11 +39,21 @@ export default function Hero() {
               </NavLink>
             </div>
           </div>
+        </div>
 
-          {/* Right: machine image */}
-          <div className="hero__corner-col hero__right-corner-image">
-            <Image src="/images/home_right_corner.jpg" alt="Hebron Quality" fill style={{ objectFit: 'cover' }} />
-          </div>
+        {/* Machine image — absolute bottom-right corner */}
+        <div className="hero__right-corner-image" style={{
+          position: 'absolute',
+          bottom: '0',
+          right: '0',
+          zIndex: 2,
+          width: '420px',
+          height: '280px',
+          borderRadius: '12px 0 0 0',
+          overflow: 'hidden',
+          boxShadow: '0 -10px 40px rgba(0,0,0,0.3)'
+        }}>
+          <Image src="/images/home_right_corner.jpg" alt="Hebron Quality" fill style={{ objectFit: 'cover' }} />
         </div>
 
       </section>
