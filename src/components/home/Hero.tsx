@@ -29,8 +29,8 @@ export default function Hero() {
         <div className="hero__body">
           <div className="hero__center">
             <h1 className="hero__h1">
-
-              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em' }}>Precision Die Casting components</span>
+              <span className="hero__company-name" style={{ display: 'block', marginBottom: '16px', color: '#ffffff', fontSize: '1.2em', whiteSpace: 'nowrap', textAlign: 'center', width: '100%' }}>HEBRON AUTOMOTIVE PRODUCTS</span>
+              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em', display: 'block', textAlign: 'center', width: '100%' }}>Precision Die Casting components</span>
             </h1>
 
             <div className="hero__actions">
