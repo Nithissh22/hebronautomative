@@ -78,7 +78,52 @@ export const translations = {
       glanceCust: 'KEY CUSTOMERS',
       glanceCap: 'ANNUAL CAPACITY',
       glanceTurnover: 'ANNUAL TURNOVER',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42,000 sq. ft.',
+      valShifts: '3-shift, 365 days',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2,400 metric tons / year',
+      valTurnover: 'INR 41 Crores (~$4.9 Million USD) / Annum',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42 000 pieds carrés',
+      valShifts: '3 quarts de travail, 365 jours',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2 400 tonnes métriques / an',
+      valTurnover: '41 crores INR (~4,9 millions USD) / an',
       glanceCert: 'CERTIFICATIONS',
+    },
+    capGrid: {
+      whatWeDo: 'CE QUE NOUS FAISONS',
+      fiveCap: 'Cinq Capacités. Une Chaîne d\'Approvisionnement.',
+      clickAny: 'Cliquez sur n\'importe quelle capacité pour explorer nos spécifications techniques.',
+      readyPartner: 'Prêt à vous associer avec nous ?',
+      reqQuote: 'Demander un devis →',
+      downloadDeck: 'Télécharger la présentation'
+    },
+    qualityStrip: {
+      assurance: 'ASSURANCE QUALITÉ',
+      zeroDefect: 'Objectif Zéro Défaut.',
+      everyComp: 'Chaque composant passe par nos systèmes intégrés d\'inspection visuelle et de MMT. Capable de niveau 3 PPAP avec une traçabilité à 100 %.',
+      cpkTarget: 'CIBLE CPK',
+      traceability: 'TRAÇABILITÉ'
+    },
+    cta: {
+      readyScale: 'Prêt à étendre\nvotre ligne d\'assemblage ?',
+      sendDrawings: 'Envoyez-nous vos dessins pour un examen technique et un devis sous 48 heures.',
+      reqQuote: 'DEMANDER UN DEVIS',
+      emailSales: 'Contacter les ventes'
+    },
+    timeline: {
+      growthStory: 'NOTRE HISTOIRE DE CROISSANCE',
+      m20: '2020',
+      m20Desc: 'Ajout d\'une installation de revêtement en poudre semi-automatique',
+      m21: '2021',
+      m21Desc: '2 machines de moulage sous pression supplémentaires',
+      m22: '2022',
+      m22Desc: 'Nouvelle installation d\'usinage et d\'assemblage pour Gabriel',
+      m23: '2023',
+      m23Desc: 'Salle standard installée – UTM, Spectro, VMM, 2D',
+      milestone: 'JALON'
     }
   },
   JP: {
@@ -160,7 +205,46 @@ export const translations = {
       glanceCust: '主要顧客',
       glanceCap: '年間生産能力',
       glanceTurnover: '年間売上高',
+      valHosur: 'タミル・ナードゥ州ホスール',
+      valSqft: '42,000 平方フィート',
+      valShifts: '3交代制、365日',
+      valCustomers: 'ガブリエル・インディア — ホスール、パルワヌー、日立アステモ — トゥムクル',
+      valCapacity: '2,400 メートルトン / 年',
+      valTurnover: '41クロールインドルピー (~490万米ドル) / 年',
       glanceCert: '認証',
+    },
+    capGrid: {
+      whatWeDo: '業務内容',
+      fiveCap: '5つの能力。1つのサプライチェーン。',
+      clickAny: '機能をクリックして、完全な技術仕様を調べます。',
+      readyPartner: '提携する準備はできましたか？',
+      reqQuote: '見積もりを依頼する →',
+      downloadDeck: '機能デッキをダウンロード'
+    },
+    qualityStrip: {
+      assurance: '品質保証',
+      zeroDefect: '欠陥ゼロの目標。',
+      everyComp: 'すべてのコンポーネントは、統合されたCMMおよび視覚検査システムを通過します。100%のトレーサビリティを備えたPPAPレベル3に対応。',
+      cpkTarget: 'CPK目標',
+      traceability: 'トレーサビリティ'
+    },
+    cta: {
+      readyScale: '組立ラインを拡張する準備はできましたか？',
+      sendDrawings: '技術レビューのために図面をお送りください。48時間以内にお見積もりいたします。',
+      reqQuote: '見積もり依頼',
+      emailSales: '営業部にメール'
+    },
+    timeline: {
+      growthStory: '私たちの成長の物語',
+      m20: '2020',
+      m20Desc: '半自動粉体塗装施設を追加',
+      m21: '2021',
+      m21Desc: 'ダイカストマシン2台追加',
+      m22: '2022',
+      m22Desc: 'ガブリエル向けの新機械加工・ブッシュ組立工場',
+      m23: '2023',
+      m23Desc: '標準室設置 – UTM、Spectro、VMM、2D',
+      milestone: 'マイルストーン'
     }
   },
   ES: {
@@ -242,7 +326,46 @@ export const translations = {
       glanceCust: 'CLIENTES CLAVE',
       glanceCap: 'CAPACIDAD ANUAL',
       glanceTurnover: 'FACTURACIÓN ANUAL',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42,000 pies cuadrados',
+      valShifts: '3 turnos, 365 días',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2,400 toneladas métricas / año',
+      valTurnover: '41 Crores INR (~4.9 Millones USD) / Año',
       glanceCert: 'CERTIFICACIONES',
+    },
+    capGrid: {
+      whatWeDo: 'LO QUE HACEMOS',
+      fiveCap: 'Cinco Capacidades. Una Cadena de Suministro.',
+      clickAny: 'Haga clic en cualquier capacidad para explorar nuestras especificaciones técnicas.',
+      readyPartner: '¿Listo para asociarse con nosotros?',
+      reqQuote: 'Solicitar una Cotización →',
+      downloadDeck: 'Descargar Presentación'
+    },
+    qualityStrip: {
+      assurance: 'GARANTÍA DE CALIDAD',
+      zeroDefect: 'Objetivo de Cero Defectos.',
+      everyComp: 'Cada componente pasa por nuestros sistemas integrados de inspección visual y CMM. Capaz de nivel 3 de PPAP con 100% de trazabilidad.',
+      cpkTarget: 'OBJETIVO CPK',
+      traceability: 'TRAZABILIDAD'
+    },
+    cta: {
+      readyScale: '¿Listo para escalar\nsu línea de ensamblaje?',
+      sendDrawings: 'Envíenos sus dibujos para una revisión técnica y cotización dentro de 48 horas.',
+      reqQuote: 'SOLICITAR COTIZACIÓN',
+      emailSales: 'Enviar Email'
+    },
+    timeline: {
+      growthStory: 'NUESTRA HISTORIA DE CRECIMIENTO',
+      m20: '2020',
+      m20Desc: 'Instalación de recubrimiento en polvo semi-automática añadida',
+      m21: '2021',
+      m21Desc: '2 máquinas de fundición a presión adicionales',
+      m22: '2022',
+      m22Desc: 'Nueva instalación de mecanizado y ensamblaje para Gabriel',
+      m23: '2023',
+      m23Desc: 'Sala Estándar instalada – UTM, Spectro, VMM, 2D',
+      milestone: 'HITO'
     }
   },
   DE: {
@@ -324,7 +447,46 @@ export const translations = {
       glanceCust: 'SCHLÜSSELKUNDEN',
       glanceCap: 'JAHRESKAPAZITÄT',
       glanceTurnover: 'JAHRESUMSATZ',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42.000 Quadratfuß',
+      valShifts: '3 Schichten, 365 Tage',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2.400 Tonnen / Jahr',
+      valTurnover: '41 Crore INR (~4,9 Millionen USD) / Jahr',
       glanceCert: 'ZERTIFIZIERUNGEN',
+    },
+    capGrid: {
+      whatWeDo: 'WAS WIR TUN',
+      fiveCap: 'Fünf Fähigkeiten. Eine Lieferkette.',
+      clickAny: 'Klicken Sie auf eine Fähigkeit, um unsere technischen Spezifikationen zu erkunden.',
+      readyPartner: 'Bereit für eine Partnerschaft?',
+      reqQuote: 'Ein Angebot anfordern →',
+      downloadDeck: 'Fähigkeiten-Deck herunterladen'
+    },
+    qualityStrip: {
+      assurance: 'QUALITÄTSSICHERUNG',
+      zeroDefect: 'Null-Fehler-Ziel.',
+      everyComp: 'Jedes Bauteil durchläuft unsere integrierten CMM- und Sichtprüfsysteme. PPAP Level 3 fähig mit 100% Rückverfolgbarkeit.',
+      cpkTarget: 'CPK-ZIEL',
+      traceability: 'RÜCKVERFOLGBARKEIT'
+    },
+    cta: {
+      readyScale: 'Bereit, Ihre Montagelinie\nzu skalieren?',
+      sendDrawings: 'Senden Sie uns Ihre Zeichnungen für eine technische Prüfung und ein Angebot innerhalb von 48 Stunden.',
+      reqQuote: 'ANGEBOT ANFORDERN',
+      emailSales: 'E-Mail Vertrieb'
+    },
+    timeline: {
+      growthStory: 'UNSERE WACHSTUMSGESCHICHTE',
+      m20: '2020',
+      m20Desc: 'Halbautomatische Pulverbeschichtungsanlage hinzugefügt',
+      m21: '2021',
+      m21Desc: '2 zusätzliche Druckgussmaschinen',
+      m22: '2022',
+      m22Desc: 'Neue Bearbeitungs- und Buchsenmontage für Gabriel',
+      m23: '2023',
+      m23Desc: 'Standardraum installiert – UTM, Spectro, VMM, 2D',
+      milestone: 'MEILENSTEIN'
     }
   },
   IL: {
@@ -406,7 +568,46 @@ export const translations = {
       glanceCust: 'לקוחות מפתח',
       glanceCap: 'קיבולת שנתית',
       glanceTurnover: 'מחזור שנתי',
+      valHosur: 'הוסור, טאמיל נאדו',
+      valSqft: '42,000 רגל מרובע',
+      valShifts: '3 משמרות, 365 ימים',
+      valCustomers: 'גבריאל הודו — הוסור, פארוואנו, היטאצ\'י אסטמו — טומקור',
+      valCapacity: '2,400 טון מטרי / שנה',
+      valTurnover: '41 קרוד רופי (~4.9 מיליון דולר) / שנה',
       glanceCert: 'אישורים',
+    },
+    capGrid: {
+      whatWeDo: 'מה אנחנו עושים',
+      fiveCap: 'חמש יכולות. שרשרת אספקה אחת.',
+      clickAny: 'לחץ על כל יכולת כדי לחקור את המפרט הטכני המלא שלנו.',
+      readyPartner: 'מוכנים לשתף פעולה?',
+      reqQuote: 'בקש הצעת מחיר →',
+      downloadDeck: 'הורד מצגת יכולות'
+    },
+    qualityStrip: {
+      assurance: 'הבטחת איכות',
+      zeroDefect: 'יעד אפס תקלות.',
+      everyComp: 'כל רכיב עובר במערכות ה-CMM ומערכות הראייה המשולבות שלנו. מסוגל ל-PPAP רמה 3 עם 100% עקיבות.',
+      cpkTarget: 'יעד CPK',
+      traceability: 'עקיבות'
+    },
+    cta: {
+      readyScale: 'מוכנים להרחיב\nאת קו ההרכבה שלכם?',
+      sendDrawings: 'שלח לנו את השרטוטים שלך לבדיקה טכנית והצעת מחיר תוך 48 שעות.',
+      reqQuote: 'בקש הצעת מחיר',
+      emailSales: 'אימייל למכירות'
+    },
+    timeline: {
+      growthStory: 'סיפור הצמיחה שלנו',
+      m20: '2020',
+      m20Desc: 'נוסף מתקן ציפוי אבקה חצי אוטומטי',
+      m21: '2021',
+      m21Desc: 'נוספו 2 מכונות יציקת תבנית',
+      m22: '2022',
+      m22Desc: 'מתקן עיבוד והרכבת תותבים חדש עבור גבריאל',
+      m23: '2023',
+      m23Desc: 'חדר תקן הותקן – UTM, Spectro, VMM, 2D',
+      milestone: 'אבן דרך'
     }
   },
   RU: {
@@ -488,7 +689,46 @@ export const translations = {
       glanceCust: 'КЛЮЧЕВЫЕ КЛИЕНТЫ',
       glanceCap: 'ГОДОВАЯ МОЩНОСТЬ',
       glanceTurnover: 'ГОДОВОЙ ОБОРОТ',
+      valHosur: 'Хосур, Тамилнад',
+      valSqft: '42 000 кв. футов',
+      valShifts: '3 смены, 365 дней',
+      valCustomers: 'Gabriel India — Хосур, Парвану, Hitachi Astemo — Тумкур',
+      valCapacity: '2400 метрических тонн / год',
+      valTurnover: '41 крор рупий (~4,9 млн долл. США) / год',
       glanceCert: 'СЕРТИФИКАЦИЯ',
+    },
+    capGrid: {
+      whatWeDo: 'ЧТО МЫ ДЕЛАЕМ',
+      fiveCap: 'Пять Возможностей. Одна Цепочка Поставок.',
+      clickAny: 'Нажмите на любую возможность, чтобы изучить наши технические спецификации.',
+      readyPartner: 'Готовы к партнерству?',
+      reqQuote: 'Запросить расценки →',
+      downloadDeck: 'Скачать презентацию возможностей'
+    },
+    qualityStrip: {
+      assurance: 'КОНТРОЛЬ КАЧЕСТВА',
+      zeroDefect: 'Цель: Ноль Дефектов.',
+      everyComp: 'Каждый компонент проходит через наши интегрированные системы визуального контроля и КИМ. Способность PPAP уровня 3 со 100% прослеживаемостью.',
+      cpkTarget: 'ЦЕЛЕВОЙ CPK',
+      traceability: 'ПРОСЛЕЖИВАЕМОСТЬ'
+    },
+    cta: {
+      readyScale: 'Готовы масштабировать\nсвою сборочную линию?',
+      sendDrawings: 'Пришлите нам свои чертежи для технической оценки и коммерческого предложения в течение 48 часов.',
+      reqQuote: 'ЗАПРОСИТЬ РАСЦЕНКИ',
+      emailSales: 'Написать в отдел продаж'
+    },
+    timeline: {
+      growthStory: 'ИСТОРИЯ НАШЕГО РОСТА',
+      m20: '2020',
+      m20Desc: 'Добавлен полуавтоматический цех порошковой окраски',
+      m21: '2021',
+      m21Desc: 'Добавлены 2 дополнительные машины для литья под давлением',
+      m22: '2022',
+      m22Desc: 'Новый цех обработки и сборки втулок для Gabriel',
+      m23: '2023',
+      m23Desc: 'Установлено стандартное помещение – UTM, Spectro, VMM, 2D',
+      milestone: 'ВЕХА'
     }
   },
   FR: {
@@ -570,7 +810,52 @@ export const translations = {
       glanceCust: 'CLIENTS CLÉS',
       glanceCap: 'CAPACITÉ ANNUELLE',
       glanceTurnover: 'CHIFFRE D\'AFFAIRES ANNUEL',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42,000 sq. ft.',
+      valShifts: '3-shift, 365 days',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2,400 metric tons / year',
+      valTurnover: 'INR 41 Crores (~$4.9 Million USD) / Annum',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42 000 pieds carrés',
+      valShifts: '3 quarts de travail, 365 jours',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2 400 tonnes métriques / an',
+      valTurnover: '41 crores INR (~4,9 millions USD) / an',
       glanceCert: 'CERTIFICATIONS',
+    },
+    capGrid: {
+      whatWeDo: 'CE QUE NOUS FAISONS',
+      fiveCap: 'Cinq Capacités. Une Chaîne d\'Approvisionnement.',
+      clickAny: 'Cliquez sur n\'importe quelle capacité pour explorer nos spécifications techniques.',
+      readyPartner: 'Prêt à vous associer avec nous ?',
+      reqQuote: 'Demander un devis →',
+      downloadDeck: 'Télécharger la présentation'
+    },
+    qualityStrip: {
+      assurance: 'ASSURANCE QUALITÉ',
+      zeroDefect: 'Objectif Zéro Défaut.',
+      everyComp: 'Chaque composant passe par nos systèmes intégrés d\'inspection visuelle et de MMT. Capable de niveau 3 PPAP avec une traçabilité à 100 %.',
+      cpkTarget: 'CIBLE CPK',
+      traceability: 'TRAÇABILITÉ'
+    },
+    cta: {
+      readyScale: 'Prêt à étendre\nvotre ligne d\'assemblage ?',
+      sendDrawings: 'Envoyez-nous vos dessins pour un examen technique et un devis sous 48 heures.',
+      reqQuote: 'DEMANDER UN DEVIS',
+      emailSales: 'Contacter les ventes'
+    },
+    timeline: {
+      growthStory: 'NOTRE HISTOIRE DE CROISSANCE',
+      m20: '2020',
+      m20Desc: 'Ajout d\'une installation de revêtement en poudre semi-automatique',
+      m21: '2021',
+      m21Desc: '2 machines de moulage sous pression supplémentaires',
+      m22: '2022',
+      m22Desc: 'Nouvelle installation d\'usinage et d\'assemblage pour Gabriel',
+      m23: '2023',
+      m23Desc: 'Salle standard installée – UTM, Spectro, VMM, 2D',
+      milestone: 'JALON'
     }
   },
   PL: {
@@ -652,7 +937,46 @@ export const translations = {
       glanceCust: 'KLUCZOWI KLIENCI',
       glanceCap: 'ZDOLNOŚĆ ROCZNA',
       glanceTurnover: 'ROCZNY OBRÓT',
+      valHosur: 'Hosur, Tamil Nadu',
+      valSqft: '42 000 stóp kwadratowych',
+      valShifts: '3 zmiany, 365 dni',
+      valCustomers: 'Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur',
+      valCapacity: '2400 ton metrycznych / rok',
+      valTurnover: '41 krorów INR (~4,9 mln USD) / rok',
       glanceCert: 'CERTYFIKATY',
+    },
+    capGrid: {
+      whatWeDo: 'CO ROBIMY',
+      fiveCap: 'Pięć Możliwości. Jeden Łańcuch Dostaw.',
+      clickAny: 'Kliknij dowolną możliwość, aby poznać nasze pełne specyfikacje techniczne.',
+      readyPartner: 'Gotowy na współpracę z nami?',
+      reqQuote: 'Poproś o wycenę →',
+      downloadDeck: 'Pobierz prezentację możliwości'
+    },
+    qualityStrip: {
+      assurance: 'ZAPEWNIENIE JAKOŚCI',
+      zeroDefect: 'Cel: Zero Defektów.',
+      everyComp: 'Każdy komponent przechodzi przez nasze zintegrowane systemy kontroli wizyjnej i CMM. Zgodność z PPAP poziom 3 i 100% identyfikowalności.',
+      cpkTarget: 'CEL CPK',
+      traceability: 'IDENTYFIKOWALNOŚĆ'
+    },
+    cta: {
+      readyScale: 'Gotowy na rozwój\ntwojej linii montażowej?',
+      sendDrawings: 'Prześlij nam swoje rysunki do analizy technicznej i wyceny w ciągu 48 godzin.',
+      reqQuote: 'POPROŚ O WYCENĘ',
+      emailSales: 'Napisz do sprzedaży'
+    },
+    timeline: {
+      growthStory: 'NASZA HISTORIA WZROSTU',
+      m20: '2020',
+      m20Desc: 'Dodano półautomatyczną instalację do malowania proszkowego',
+      m21: '2021',
+      m21Desc: 'Dodano 2 maszyny do odlewania ciśnieniowego',
+      m22: '2022',
+      m22Desc: 'Nowy zakład obróbki i montażu tulei dla Gabriel',
+      m23: '2023',
+      m23Desc: 'Standard Room zainstalowany – UTM, Spectro, VMM, 2D',
+      milestone: 'KAMIEŃ MILOWY'
     }
   }
 } as const;

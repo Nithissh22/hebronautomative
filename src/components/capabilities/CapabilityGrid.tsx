@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { capabilitiesList } from './capabilityData';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './CapabilityGrid.css';
 
 interface CapabilityGridProps {
@@ -7,6 +8,7 @@ interface CapabilityGridProps {
 }
 
 export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
+  const t = useTranslation('capGrid');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -20,13 +22,13 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
     <div className={`capability-grid-container ${mounted ? 'is-mounted' : ''}`}>
       
       <div className="capability-grid-header">
-        <span className="grid-header-eyebrow">● WHAT WE DO</span>
+        <span className="grid-header-eyebrow">● {t('whatWeDo')}</span>
         <h2 className="grid-header-title">
-          {"Five Capabilities. One Supply Chain.".split(' ').map((word, i) => (
+          {t('fiveCap').split(' ').map((word, i) => (
             <span key={i} style={{ animationDelay: `${i * 80}ms` }} className="word-reveal">{word}&nbsp;</span>
           ))}
         </h2>
-        <p className="grid-header-sub">Click any capability to explore our full technical specifications.</p>
+        <p className="grid-header-sub">{t('clickAny')}</p>
       </div>
 
       <div className="capability-grid">
@@ -66,13 +68,13 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
       
       <div className="capability-grid-footer">
         <div className="footer-cta-band">
-          <p>Ready to partner with us?</p>
+          <p>{t('readyPartner')}</p>
           <div className="footer-cta-buttons">
             <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              Request a Quote →
+              {t('reqQuote')}
             </button>
             <a href="#" className="btn-outline" onClick={(e) => e.preventDefault()}>
-              Download Capabilities Deck
+              {t('downloadDeck')}
             </a>
           </div>
         </div>

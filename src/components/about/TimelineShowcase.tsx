@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from 'react';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './TimelineShowcase.css';
 
 const IconFactory = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 21c1.147 -4.02 1.983 -8.027 2 -12h6c.017 3.973 .853 7.98 2 12"/><path d="M12.5 13h4.5c.025 2.612 .894 5.296 2 8"/><path d="M9 5a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1"/></svg>;
@@ -12,17 +13,18 @@ const IconRocket = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" heig
 const IconArrowLeft = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>;
 const IconArrowRight = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>;
 
-const milestones = [
-  { year: 2019, text: "Started Hebron Automotive with 2 HPDC machines", icon: <IconFactory /> },
-  { year: 2020, text: "Semi-automatic powder coating facility added", icon: <IconSpray /> },
-  { year: 2021, text: "2 additional die casting machines added", icon: <IconSettings /> },
-  { year: 2022, text: "New machining & bush assembly facility for Gabriel", icon: <IconTool /> },
-  { year: 2023, text: "Standard Room installed — UTM, Spectro, VMM, 2D", icon: <IconMicroscope /> },
-  { year: 2024, text: "2 more die casting machines added (180T & 250T)", icon: <IconEngine /> },
-  { year: 2025, text: "7 GDC machines + 5 VMC machines + Tool Room setup", icon: <IconRocket /> },
-];
-
 export default function TimelineShowcase() {
+  const t = useTranslation('timeline');
+
+  const milestones = [
+    { year: 2019, text: "Started Hebron Automotive with 2 HPDC machines", icon: <IconFactory /> },
+    { year: 2020, text: t('m20Desc'), icon: <IconSpray /> },
+    { year: 2021, text: t('m21Desc'), icon: <IconSettings /> },
+    { year: 2022, text: t('m22Desc'), icon: <IconTool /> },
+    { year: 2023, text: t('m23Desc'), icon: <IconMicroscope /> },
+    { year: 2024, text: "2 more die casting machines added (180T & 250T)", icon: <IconEngine /> },
+    { year: 2025, text: "7 GDC machines + 5 VMC machines + Tool Room setup", icon: <IconRocket /> },
+  ];
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -71,7 +73,7 @@ export default function TimelineShowcase() {
       <div className="container">
         
         <div className="growth-header">
-          <h2 className="growth-heading">OUR GROWTH STORY</h2>
+          <h2 className="growth-heading">{t('growthStory')}</h2>
         </div>
 
         {/* 4-Column Journey Layout */}
@@ -94,7 +96,7 @@ export default function TimelineShowcase() {
         </div>
 
         <div className="milestone-header">
-          <h2 className="growth-heading">MILESTONE</h2>
+          <h2 className="growth-heading">{t('milestone')}</h2>
         </div>
 
         {/* Timeline Stepper */}

@@ -137,11 +137,11 @@ export default function FoundationShowcase() {
                   </tr>
                   <tr>
                     <th>{t('glanceHq')}</th>
-                    <td>Hosur, Tamil Nadu</td>
+                    <td>{t('valHosur')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceArea')}</th>
-                    <td>42,000 sq. ft.</td>
+                    <td>{t('valSqft')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceEmp')}</th>
@@ -149,19 +149,19 @@ export default function FoundationShowcase() {
                   </tr>
                   <tr>
                     <th>{t('glanceShifts')}</th>
-                    <td>3-shift, 365 days</td>
+                    <td>{t('valShifts')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceCust')}</th>
-                    <td>Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur</td>
+                    <td>{t('valCustomers')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceCap')}</th>
-                    <td>2,400 metric tons / year</td>
+                    <td>{t('valCapacity')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceTurnover')}</th>
-                    <td className="highlight-turnover">INR 41 Crores (~$4.9 Million USD) / Annum</td>
+                    <td className="highlight-turnover">{t('valTurnover')}</td>
                   </tr>
                   <tr>
                     <th>{t('glanceCert')}</th>
