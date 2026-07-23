@@ -57,7 +57,7 @@ export const capabilitiesList: CapabilityData[] = [
     number: "02",
     title: "CNC MACHINING",
     powerStatement: "5-axis precision machining for complex automotive geometries",
-    imageSrc: "/images/cnc-machine.png",
+    imageSrc: "/images/vmc_machine_uploaded.jpg",
     certBadge: "IATF 16949:2016 Certified",
     specs: [
       { icon: "ti-cpu", label: "Type", value: "5-Axis CNC" },

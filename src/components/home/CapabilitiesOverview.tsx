@@ -55,7 +55,7 @@ export default function CapabilitiesOverview() {
               ['Centers', '4-axis VMC'],
               ['Make', 'HAAS USA'],
             ],
-            image: '/images/hpdc_cap.jpg',
+            image: '/images/vmc_machine_uploaded.jpg',
           },
           {
             num: '03',
