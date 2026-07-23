@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
 
             <div className="hero__actions">
-              <NavLink href="/capabilities" className="btn-outline">
+              <NavLink href="/capabilities" className="btn-outline" style={{ color: '#ffffff', borderColor: '#ffffff' }}>
                 {t('viewCap')}
               </NavLink>
             </div>
