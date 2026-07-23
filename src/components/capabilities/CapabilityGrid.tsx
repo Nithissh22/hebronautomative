@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { capabilitiesList } from './capabilityData';
 import { useTranslation } from '@/i18n/LanguageContext';
