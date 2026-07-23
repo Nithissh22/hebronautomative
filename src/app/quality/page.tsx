@@ -293,20 +293,25 @@ export default function QualityPage() {
           <div className="container">
             <h2 className="eyebrow section-header neon-header">UPCOMING CAPABILITY</h2>
             
-            <div className="neon-card">
-              <h3 className="neon-title">X-Ray CT Imaging & Analysis</h3>
-              <p className="neon-target">TARGET: MARCH 2026</p>
-              
-              <div className="neon-specs">
-                <p><strong>Equipment:</strong> Karma DX160 (160kV) & DX225 (225kV)</p>
-                <p><strong>Component size:</strong> up to 800×800×1200mm</p>
-                <p><strong>Max component weight:</strong> 100kg</p>
+            <div className="neon-card" style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center' }}>
+              <div style={{ flex: '1 1 300px' }}>
+                <h3 className="neon-title">X-Ray CT Imaging & Analysis</h3>
+                <p className="neon-target">TARGET: MARCH 2026</p>
+                
+                <div className="neon-specs">
+                  <p><strong>Equipment:</strong> Karma DX160 (160kV) & DX225 (225kV)</p>
+                  <p><strong>Component size:</strong> up to 800×800×1200mm</p>
+                  <p><strong>Max component weight:</strong> 100kg</p>
+                </div>
+                
+                <p className="neon-desc">
+                  This investment signals our commitment to moving toward internal NDT<br/>
+                  capability — a Tier-1 requirement for structural components.
+                </p>
               </div>
-              
-              <p className="neon-desc">
-                This investment signals our commitment to moving toward internal NDT<br/>
-                capability — a Tier-1 requirement for structural components.
-              </p>
+              <div style={{ flex: '1 1 300px' }}>
+                <img src="/images/xray_ct.jpg" alt="X-Ray CT Equipment" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0, 240, 255, 0.2)' }} />
+              </div>
             </div>
           </div>
         </section>

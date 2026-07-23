@@ -75,7 +75,7 @@ export default function CapabilitiesOverview() {
               ['Lines', '2 Semi-Auto Lines'],
               ['Testing', 'DFT Meter Lab'],
             ],
-            image: '/images/powder_cap.jpg',
+            image: '/images/powder_cap_uploaded.jpg',
           },
         ].map(cap => (
           <NavLink href={`/capabilities${cap.id ? `?id=${cap.id}` : ''}`} className="cap-card" key={cap.num}>

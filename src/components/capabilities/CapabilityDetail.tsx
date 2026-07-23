@@ -26,7 +26,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
     '/images/hpdc_machine_uploaded.jpg',
     '/images/vmc_machine_uploaded.jpg',
     '/images/quality-inspection.jpg',
-    '/images/powder-coating.png'
+    '/images/powder_cap_uploaded.jpg'
   ];
   const [imgIndex, setImgIndex] = React.useState(0);
 

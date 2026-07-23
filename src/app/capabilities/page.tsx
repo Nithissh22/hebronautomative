@@ -162,11 +162,8 @@ function CapabilitiesContent() {
 
 export default function CapabilitiesPage() {
   return (
-    <>
-      <Suspense fallback={<div className="page-fade-in"><Navbar theme="light" /><div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading...</div></div>}>
-        <CapabilitiesContent />
-      </Suspense>
-      <Footer />
-    </>
+    <Suspense fallback={<div className="page-fade-in"><Navbar theme="light" /><div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading...</div></div>}>
+      <CapabilitiesContent />
+    </Suspense>
   );
 }

@@ -83,7 +83,7 @@ export const capabilitiesList: CapabilityData[] = [
     number: "03",
     title: "POWDER COATING",
     powerStatement: "Semi-automatic coating line for corrosion-resistant OEM finishes",
-    imageSrc: "/images/powder-coating.png",
+    imageSrc: "/images/powder_cap_uploaded.jpg",
     specs: [
       { icon: "ti-settings", label: "Type", value: "Semi-Automatic" },
       { icon: "ti-palette", label: "Finish", value: "RAL Custom Colors" },
