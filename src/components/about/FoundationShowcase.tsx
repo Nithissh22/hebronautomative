@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './FoundationShowcase.css';
 
 interface AnimatedCounterProps {
@@ -55,6 +56,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 };
 
 export default function FoundationShowcase() {
+  const t = useTranslation('foundation');
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -75,9 +77,9 @@ export default function FoundationShowcase() {
         {/* Header Block */}
         <div className="fd-header fd-observe">
           <div className="fd-heading-wrap">
-            <h2 className="fd-heading">Engineered in India.<br />Trusted Globally.</h2>
+            <h2 className="fd-heading" style={{ whiteSpace: 'pre-line' }}>{t('headerTitle')}</h2>
           </div>
-          <p className="fd-subtext">Aluminium die casting and precision machining for automotive assembly lines since 2019.</p>
+          <p className="fd-subtext">{t('headerSub')}</p>
         </div>
 
         {/* Stats Strip */}
@@ -86,25 +88,25 @@ export default function FoundationShowcase() {
             <div className="fd-stat-num">
               <AnimatedCounter start={2015} target={2019} duration={1500} />
             </div>
-            <div className="fd-stat-label">ESTABLISHED</div>
+            <div className="fd-stat-label">{t('statEst')}</div>
           </div>
           <div className="fd-stat-card">
             <div className="fd-stat-num">
               <AnimatedCounter target={42000} useComma={true} />
             </div>
-            <div className="fd-stat-label">SQ. FT.</div>
+            <div className="fd-stat-label">{t('statSqft')}</div>
           </div>
           <div className="fd-stat-card">
             <div className="fd-stat-num">
               <AnimatedCounter target={120} suffix="+" />
             </div>
-            <div className="fd-stat-label">EMPLOYEES</div>
+            <div className="fd-stat-label">{t('statEmp')}</div>
           </div>
           <div className="fd-stat-card">
             <div className="fd-stat-num">
               <AnimatedCounter target={3} />
             </div>
-            <div className="fd-stat-label">SHIFTS/DAY</div>
+            <div className="fd-stat-label">{t('statShifts')}</div>
           </div>
         </div>
 
@@ -112,57 +114,57 @@ export default function FoundationShowcase() {
         <div className="fd-body">
           <div className="fd-left fd-observe">
             <div className="fd-eyebrow">
-              <span className="fd-dot">●</span> Our foundation
+              <span className="fd-dot">●</span> {t('eyebrow')}
             </div>
             <div className="fd-text-content">
               <p>
-                <span className="fw-500">Established in 2019 in Hosur — India's automotive manufacturing corridor — Hebron Automotive began as a precision die casting operation serving domestic OEMs.</span> Over 6 years, we have expanded to include 5-axis CNC machining, sub-assembly, and full quality systems certified to IATF 16949:2016.
+                <span className="fw-500">{t('p1Start')}</span>{t('p1End')}
               </p>
               <p>
-                <span className="fw-500">Today, Hebron supplies structural and functional aluminium components to global Tier-1s like Gabriel India and Hitachi Astemo</span> — held to the zero-defect standards demanded by the automotive industry.
+                <span className="fw-500">{t('p2Start')}</span>{t('p2End')}
               </p>
             </div>
           </div>
 
           <div className="fd-right fd-observe">
             <div className="fd-facts-card">
-              <div className="fd-card-eyebrow">COMPANY AT A GLANCE</div>
+              <div className="fd-card-eyebrow">{t('glance')}</div>
               <table className="fd-facts-table">
                 <tbody>
                   <tr>
-                    <th>ESTABLISHED</th>
+                    <th>{t('glanceEst')}</th>
                     <td>2019</td>
                   </tr>
                   <tr>
-                    <th>HEADQUARTERS</th>
+                    <th>{t('glanceHq')}</th>
                     <td>Hosur, Tamil Nadu</td>
                   </tr>
                   <tr>
-                    <th>FACILITY AREA</th>
+                    <th>{t('glanceArea')}</th>
                     <td>42,000 sq. ft.</td>
                   </tr>
                   <tr>
-                    <th>EMPLOYEES</th>
+                    <th>{t('glanceEmp')}</th>
                     <td>120+</td>
                   </tr>
                   <tr>
-                    <th>SHIFTS</th>
+                    <th>{t('glanceShifts')}</th>
                     <td>3-shift, 365 days</td>
                   </tr>
                   <tr>
-                    <th>KEY CUSTOMERS</th>
+                    <th>{t('glanceCust')}</th>
                     <td>Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur</td>
                   </tr>
                   <tr>
-                    <th>ANNUAL CAPACITY</th>
+                    <th>{t('glanceCap')}</th>
                     <td>2,400 metric tons / year</td>
                   </tr>
                   <tr>
-                    <th>ANNUAL TURNOVER</th>
+                    <th>{t('glanceTurnover')}</th>
                     <td className="highlight-turnover">INR 41 Crores (~$4.9 Million USD) / Annum</td>
                   </tr>
                   <tr>
-                    <th>CERTIFICATIONS</th>
+                    <th>{t('glanceCert')}</th>
                     <td>ISO 9001:2015 &middot; IATF 16949:2016 &middot; ISO 14001:2015</td>
                   </tr>
                 </tbody>
