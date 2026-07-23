@@ -38,11 +38,11 @@ export default function QualityStrip() {
             </div>
             <div className="qual-cert">
               <h4>IATF 16949:2016</h4>
-              <p><strong>Issuing Body:</strong> OST Scenes</p>
-              <p><strong>Issue Date:</strong> 16.11.2021</p>
-              <p><strong>Valid Until:</strong> 15.11.2026</p>
-              <p><strong>Certificate No:</strong> IATF 16949:2016</p>
-              <a href="#">View Certificate →</a>
+              <p><strong>Issuing Body:</strong> TÜV Rheinland</p>
+              <p><strong>Issue Date:</strong> 2024-11-12</p>
+              <p><strong>Valid Until:</strong> 2027-11-11</p>
+              <p><strong>Certificate No:</strong> 01 111 2436343</p>
+              <img src="/images/iatf_cert_uploaded.jpg" alt="IATF 16949:2016 Certificate" style={{ width: '100%', marginTop: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' }} />
             </div>
             <div className="qual-cert">
               <h4>ISO 14001:2015</h4>

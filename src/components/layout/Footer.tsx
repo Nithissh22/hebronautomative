@@ -34,10 +34,21 @@ export default function Footer() {
 
         <div className="footer__col">
           <h4 className="footer__h4">{t('processes')}</h4>
-          <NavLink href="/capabilities">High Pressure Die Casting</NavLink>
-          <NavLink href="/capabilities">Gravity Die Casting</NavLink>
-          <NavLink href="/capabilities">VMC / CNC Machining</NavLink>
-          <NavLink href="/capabilities">Powder Coating</NavLink>
+          <NavLink href="/capabilities?id=die-casting" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>01</span> DIE CASTING
+          </NavLink>
+          <NavLink href="/capabilities?id=cnc-machining" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>02</span> CNC MACHINING
+          </NavLink>
+          <NavLink href="/capabilities?id=powder-coating" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>03</span> POWDER COATING
+          </NavLink>
+          <NavLink href="/capabilities?id=sub-assembly" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>04</span> SUB-ASSEMBLY
+          </NavLink>
+          <NavLink href="/capabilities?id=quality-systems" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>05</span> QUALITY & INSPECTION
+          </NavLink>
         </div>
 
         <div className="footer__col">
