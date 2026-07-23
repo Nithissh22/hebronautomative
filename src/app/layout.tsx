@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 
 import { TransitionProvider } from "@/context/TransitionContext";
 import PageLoader from "@/components/ui/PageLoader";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -57,11 +58,13 @@ export default function RootLayout({
             Skip to main content
           </a>
           {/* Added the global 400ms fade-in wrapper here */}
+          <LanguageProvider>
           <div className="global-fade-in">
             {children}
             <ClientsSection />
             <Footer />
           </div>
+          </LanguageProvider>
         </TransitionProvider>
       </body>
     </html>

@@ -16,9 +16,25 @@
   max-width: 320px;
 }
 
+.footer__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.footer__logo-text {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: white;
+  text-transform: uppercase;
+}
+
 .footer__logo {
   height: 40px;
-  margin-bottom: 24px;
+  width: auto;
 }
 
 .footer__h4 {
@@ -88,7 +104,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px; /* slightly larger for emoji */
+  font-size: 14px;
+  color: var(--text-on-dark-dim);
+}
+
+.footer__flag-img {
+  width: 20px;
+  height: auto;
+  border-radius: 2px;
 }
 
 .footer__credit-name {

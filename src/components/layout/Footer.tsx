@@ -1,16 +1,23 @@
+'use client';
+
 import React from 'react';
 import NavLink from '@/components/ui/NavLink';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './Footer.css';
 
 export default function Footer() {
+  const t = useTranslation('footer');
   return (
     <footer className="footer">
       <div className="container footer__grid">
         
         <div className="footer__col footer__col--brand">
-          <img src="/images/hebron-logo_v2.png" alt="Hebron Automotive" className="footer__logo" />
+          <div className="footer__logo-wrapper">
+            <img src="/images/hebron-logo_v2.png" alt="Hebron Automotive" className="footer__logo" />
+            <span className="footer__logo-text">HEBRON AUTOMOTIVE</span>
+          </div>
           <p className="footer__text">
-            Precision aluminium die casting, machining, and sub-assembly for global automotive OEMs.
+            {t('desc')}
           </p>
           <div className="footer__map-container">
             <iframe 
@@ -26,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h4 className="footer__h4">Processes</h4>
+          <h4 className="footer__h4">{t('processes')}</h4>
           <NavLink href="/capabilities">High Pressure Die Casting</NavLink>
           <NavLink href="/capabilities">Gravity Die Casting</NavLink>
           <NavLink href="/capabilities">VMC / CNC Machining</NavLink>
@@ -34,7 +41,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h4 className="footer__h4">Company</h4>
+          <h4 className="footer__h4">{t('company')}</h4>
           <NavLink href="/about">About Us</NavLink>
           <NavLink href="/quality">Quality & Certifications</NavLink>
           <NavLink href="/products">Products</NavLink>
@@ -43,17 +50,18 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h4 className="footer__h4">Contact</h4>
+          <h4 className="footer__h4">{t('contact')}</h4>
           <p className="footer__text">Plot No. 123, Sector 4<br/>Auto Nagar, Hosur, TN, India</p>
-          <a href="mailto:sales@hebronautomotive.com" className="footer__link">sales@hebronautomotive.com</a>
-          <NavLink href="/contact" className="footer__link-btn">Contact Us</NavLink>
+          <a href="mailto:hebronautomotive@gmail.com" className="footer__link" target="_blank" rel="noopener noreferrer">hebronautomotive@gmail.com</a>
+          <a href="https://wa.me/919442619772" className="footer__link" target="_blank" rel="noopener noreferrer">+91 94426 19772</a>
         </div>
 
       </div>
       <div className="container footer__bottom">
-        <span>© 2026 Hebron Automotive Pvt Ltd.</span>
+        <span>{t('rights')}</span>
         <span className="footer__flag">
-          🇮🇳 India
+          <img src="https://flagcdn.com/w20/in.png" alt="India Flag" className="footer__flag-img" />
+          IN India
         </span>
       </div>
     </footer>

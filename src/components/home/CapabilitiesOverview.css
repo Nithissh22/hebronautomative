@@ -77,6 +77,8 @@
   position: relative;
   border: 1px solid var(--border-light);
   border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Hover lift effect */
@@ -170,7 +172,7 @@
   transition: gap 200ms ease, color 200ms ease;
 }
 
-.cap-card__link:hover {
+.cap-card:hover .cap-card__link {
   color: var(--brand-cyan);
   gap: 10px;
 }

@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './GallerySection.css';
 
 const images = [
@@ -9,7 +12,6 @@ const images = [
   { src: '/assets/Hebron_Automotive_Facility_4.jpg', name: 'Universal Testing Machine' },
   { src: '/assets/Hebron_Automotive_Facility_5.jpg', name: 'CNC Machining Center' },
   { src: '/assets/Hebron_Automotive_Facility_6.jpg', name: 'Leak Testing Machine' },
-  { src: '/assets/Hebron_Automotive_Facility_7.jpg', name: 'Horizontal Boring Machine' },
   { src: '/assets/Hebron_Automotive_Facility_9.jpg', name: 'Die Casting Machine' },
   { src: '/assets/Hebron_Automotive_Facility_10.jpg', name: 'Gravity Die Casting' },
   { src: '/assets/Hebron_Automotive_Facility_11.jpg', name: 'Die Casting Machine' },
@@ -28,11 +30,12 @@ const images = [
 ];
 
 export default function GallerySection() {
+  const t = useTranslation('gallery');
   return (
     <section className="gallery-section">
       <div className="gallery-section__header">
-        <span className="eyebrow">OUR FACILITIES</span>
-        <h2 className="section-heading">Company Gallery</h2>
+        <span className="eyebrow">{t('eyebrow')}</span>
+        <h2 className="section-heading">{t('title')}</h2>
         <div className="heading-rule" style={{ margin: '0 auto 32px' }} />
       </div>
       

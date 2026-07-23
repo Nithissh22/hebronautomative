@@ -1,14 +1,18 @@
+'use client';
+
 import React from 'react';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './ClientsSection.css';
 
 export default function ClientsSection() {
+  const t = useTranslation('clients');
   return (
     <section className="clients-sec">
       <div className="container">
         <div className="clients-sec__header">
-          <span className="eyebrow">TRUSTED BY OEMS</span>
-          <h2 className="section-heading section-heading--light">
-            Our Approved End Customers
+          <span className="eyebrow">{t('eyebrow')}</span>
+          <h2 className="section-heading">
+            {t('title')}
           </h2>
           <div className="heading-rule" />
         </div>

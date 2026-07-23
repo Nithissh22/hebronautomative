@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react';
 import NavLink from '@/components/ui/NavLink';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './CapabilitiesOverview.css';
 
 export default function CapabilitiesOverview() {
+  const t = useTranslation('capabilities');
   return (
     <section className="cap-overview">
       <div className="cap-overview__videos-container">
@@ -42,14 +46,14 @@ export default function CapabilitiesOverview() {
       </div>
       
       <div className="cap-overview__header" style={{ marginTop: '80px' }}>
-        <span className="eyebrow">PROCESS CAPABILITIES</span>
+        <span className="eyebrow">{t('eyebrow')}</span>
         <div className="heading-rule" />
       </div>
       <div className="cap-overview__grid">
         {[
           {
             num: '01',
-            title: 'High Pressure Die Casting',
+            title: t('hpdc'),
             id: 'die-casting',
             specs: [
               ['Tonnage', '120T – 800T'],
@@ -60,7 +64,7 @@ export default function CapabilitiesOverview() {
           },
           {
             num: '02',
-            title: 'VMC / CNC Machining',
+            title: t('vmc'),
             id: 'cnc-machining',
             specs: [
               ['Centers', '3/4/5-axis'],
@@ -71,7 +75,7 @@ export default function CapabilitiesOverview() {
           },
           {
             num: '03',
-            title: 'Gravity Die Casting',
+            title: t('gdc'),
             id: 'die-casting',
             specs: [
               ['GDC Units', '7 Machines'],
@@ -82,7 +86,7 @@ export default function CapabilitiesOverview() {
           },
           {
             num: '04',
-            title: 'Powder Coating',
+            title: t('powder'),
             id: 'powder-coating',
             specs: [
               ['Lines', '2 Semi-Auto Lines'],
@@ -92,7 +96,7 @@ export default function CapabilitiesOverview() {
             ],
           },
         ].map(cap => (
-          <div className="cap-card" key={cap.num}>
+          <NavLink href={`/capabilities${cap.id ? `?id=${cap.id}` : ''}`} className="cap-card" key={cap.num}>
             <div className="cap-card__top">
               <span className="cap-card__num">{cap.num}</span>
               <h3 className="cap-card__title">{cap.title}</h3>
@@ -105,10 +109,10 @@ export default function CapabilitiesOverview() {
                 </div>
               ))}
             </div>
-            <NavLink href={`/capabilities${cap.id ? `?id=${cap.id}` : ''}`} className="cap-card__link">
-              View Details →
-            </NavLink>
-          </div>
+            <span className="cap-card__link">
+              {t('viewDetails')}
+            </span>
+          </NavLink>
         ))}
       </div>
     </section>
