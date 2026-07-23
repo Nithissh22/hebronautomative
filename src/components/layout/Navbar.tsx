@@ -152,7 +152,7 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
                 opacity: language === lang.code ? 1 : 0.5,
                 transition: 'opacity 0.2s',
                 display: 'flex', alignItems: 'center', gap: '4px',
-                fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, color: 'inherit'
+                fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, color: '#0a1930'
               }}
               title={lang.name}
             >

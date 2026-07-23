@@ -7,13 +7,14 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  background: transparent;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
   transition: background 300ms ease, box-shadow 300ms ease;
 }
 
 .nav--solid {
-  background: var(--bg-dark);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .nav__logo {
@@ -31,8 +32,8 @@
 .nav__links a {
   font-family: var(--font-body), 'Inter', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  color: #0a1930;
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -54,8 +55,8 @@
 
 .nav__links a.active,
 .nav__dropdown-trigger.active {
-  color: white;
-  font-weight: 500;
+  color: #0a1930;
+  font-weight: 600;
 }
 .nav__links a.active::after { width: 100%; }
 
@@ -69,15 +70,15 @@
 .nav__dropdown-trigger {
   font-family: var(--font-body), 'Inter', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  color: #0a1930;
   cursor: pointer;
   padding-bottom: 3px;
   transition: color 200ms ease;
 }
 
 .nav__dropdown-trigger:hover {
-  color: white;
+  color: var(--brand-cyan);
 }
 
 .nav__dropdown-menu {
@@ -170,7 +171,7 @@
   font-family: var(--font-mono), 'Space Grotesk', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color: #0a1930;
 }
 
 .nav--light .nav__lang-current {
@@ -230,7 +231,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: white;
+  background-color: #0a1930;
   margin: 3px 0;
   transition: all 0.3s ease;
   transform-origin: center;
