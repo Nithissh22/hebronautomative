@@ -1,7 +1,7 @@
 /* Hero section */
 .about-hero {
   position: relative;
-  background: url('/images/about-hero-bg.jpg') center/cover no-repeat;
+  background: url('/images/about_bg_uploaded.jpg') center/cover no-repeat;
   padding: 120px 0 80px;
   min-height: 50vh;
   z-index: 1;

@@ -183,6 +183,7 @@
     grid-template-columns: 1fr;
   }
   .hero__right { display: none; }
+  .hero__right-corner-image { display: none; }
 }
 
 @media (max-width: 768px) {

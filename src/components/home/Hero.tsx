@@ -41,6 +41,10 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Floating image right corner */}
+        <div style={{ position: 'absolute', bottom: '60px', right: '60px', zIndex: 2, width: '400px', height: '260px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} className="hero__right-corner-image">
+          <Image src="/images/home_right_corner.jpg" alt="Hebron Quality" fill style={{ objectFit: 'cover' }} />
+        </div>
 
       </section>
 

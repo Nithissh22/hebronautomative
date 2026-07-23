@@ -19,7 +19,7 @@ export default function MissionVision() {
           {/* Mission: Image on Left, Text on Right */}
           <div className="mission-row">
             <div className="mission-image-wrapper">
-              <img src="/images/mission_img.jpg" alt="Our Mission" className="mission-image" />
+              <img src="/images/mission_uploaded.jpg" alt="Our Mission" className="mission-image" />
             </div>
             <div className="mission-card">
               <h3>{t('missionTitle')}</h3>
@@ -30,7 +30,7 @@ export default function MissionVision() {
           {/* Vision: Text on Left, Image on Right */}
           <div className="mission-row mission-row--reverse">
             <div className="mission-image-wrapper">
-              <img src="/images/vision_img.jpg" alt="Our Vision" className="mission-image" />
+              <img src="/images/vision_uploaded.jpg" alt="Our Vision" className="mission-image" />
             </div>
             <div className="mission-card">
               <h3>{t('visionTitle')}</h3>

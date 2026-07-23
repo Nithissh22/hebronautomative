@@ -12,18 +12,21 @@ export default function CapabilitiesOverview() {
     <section className="cap-overview">
       <div className="cap-overview__videos-container">
         {/* VIDEO 1 */}
-        <div className="cap-video-container">
-          <video 
-            className="cap-video-element" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-          >
-            <source src="/videos/video1.mp4" type="video/mp4" />
-          </video>
-          <div className="cap-video-content">
-            <h2 className="cap-video-heading">Toyo Die Casting Machine</h2>
+        <div className="cap-video-container" style={{ display: 'flex', flexDirection: 'column', height: 'auto', minHeight: 'auto', padding: '60px 20px', gap: '30px', background: '#0e1a5c' }}>
+          <h2 className="cap-video-heading" style={{ position: 'relative', zIndex: 3, margin: 0, color: '#fff' }}>
+            Toyo Die Casting Machine
+          </h2>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}>
+            <video 
+              className="cap-video-element" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            >
+              <source src="/videos/video1.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         
