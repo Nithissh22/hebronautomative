@@ -65,7 +65,7 @@ export default function CapabilitiesOverview() {
               ['GDC Units', '7 Machines'],
               ['Furnaces', '3 Melting + 1 Holding'],
             ],
-            image: '/images/gdc_cap.jpg',
+            image: '/images/gdc_machine_uploaded.jpg',
           },
           {
             num: '04',
