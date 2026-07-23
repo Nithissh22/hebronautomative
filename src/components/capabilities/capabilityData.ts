@@ -56,17 +56,17 @@ export const capabilitiesList: CapabilityData[] = [
     id: "cnc-machining",
     number: "02",
     title: "CNC MACHINING",
-    powerStatement: "5-axis precision machining for complex automotive geometries",
+    powerStatement: "4-axis precision machining for complex automotive geometries",
     imageSrc: "/images/vmc_machine_uploaded.jpg",
     certBadge: "IATF 16949:2016 Certified",
     specs: [
-      { icon: "ti-cpu", label: "Type", value: "5-Axis CNC" },
-      { icon: "ti-building-factory", label: "Machines", value: "5 VMC Machines" },
+      { icon: "ti-cpu", label: "Type", value: "4-Axis CNC" },
+      { icon: "ti-building-factory", label: "Machines", value: "4 VMC Machines" },
       { icon: "ti-ruler", label: "Tolerance", value: "±0.01mm" },
       { icon: "ti-atom", label: "Material", value: "Aluminium Alloys" }
     ],
     equipmentList: [
-      { name: "VMC Machine", qty: "×5" },
+      { name: "VMC Machine", qty: "×4" },
       { name: "Tool Room Setup", qty: "×1" }
     ],
     processFlow: ["Raw Stock", "Setup", "Machine", "Deburr", "CMM"],

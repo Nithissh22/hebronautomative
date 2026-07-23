@@ -5,7 +5,7 @@
   min-height: 680px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;       /* anchor to bottom */
+  justify-content: center;       /* center vertically */
   overflow: hidden;
 }
 
@@ -28,7 +28,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 72px 25vh; /* Increased bottom padding to lift text perfectly below Hebron Automotive */
+  padding: 0 72px; 
   width: 100%;
 }
 
