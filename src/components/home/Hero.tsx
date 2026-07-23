@@ -25,12 +25,13 @@ export default function Hero() {
         {/* Dark overlay */}
         <div className="hero__overlay" />
 
-        {/* Content — centered */}
-        <div className="hero__body">
+        {/* Content — split layout to balance text with corner image */}
+        <div className="hero__body hero__body--split">
+          {/* Left: text column */}
           <div className="hero__center">
             <h1 className="hero__h1">
-              <span className="hero__company-name" style={{ display: 'block', marginBottom: '16px', color: '#ffffff', fontSize: '1.2em', whiteSpace: 'nowrap', textAlign: 'center', width: '100%' }}>HEBRON AUTOMOTIVE PRODUCTS</span>
-              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em', display: 'block', textAlign: 'center', width: '100%' }}>Precision Die Casting components</span>
+              <span className="hero__company-name">HEBRON AUTOMOTIVE PRODUCTS</span>
+              <span className="hero__main-heading" style={{ color: '#94a3b8', fontWeight: 400, fontSize: '0.8em', display: 'block' }}>Precision Die Casting components</span>
             </h1>
 
             <div className="hero__actions">
@@ -39,11 +40,11 @@ export default function Hero() {
               </NavLink>
             </div>
           </div>
-        </div>
 
-        {/* Floating image right corner */}
-        <div style={{ position: 'absolute', bottom: '60px', right: '60px', zIndex: 2, width: '400px', height: '260px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }} className="hero__right-corner-image">
-          <Image src="/images/home_right_corner.jpg" alt="Hebron Quality" fill style={{ objectFit: 'cover' }} />
+          {/* Right: machine image */}
+          <div className="hero__corner-col hero__right-corner-image">
+            <Image src="/images/home_right_corner.jpg" alt="Hebron Quality" fill style={{ objectFit: 'cover' }} />
+          </div>
         </div>
 
       </section>

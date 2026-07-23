@@ -32,13 +32,36 @@
   width: 100%;
 }
 
+/* Split: text left, image right — balances the visual weight */
+.hero__body--split {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+  padding: 0 72px;
+}
+
+
 .hero__center {
   max-width: 900px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
 }
+
+/* Corner image column inside grid */
+.hero__corner-col {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+
 
 /* ── EYEBROW ── */
 .hero__center .eyebrow {
@@ -178,13 +201,16 @@
 }
 
 @media (max-width: 1200px) {
-  .hero__body {
+  .hero__body,
+  .hero__body--split {
+    grid-template-columns: 1fr;
     padding-left: 40px;
     padding-right: 40px;
-    grid-template-columns: 1fr;
+    text-align: center;
   }
-  .hero__right { display: none; }
+  .hero__center { align-items: center; }
   .hero__right-corner-image { display: none; }
+  .hero__right { display: none; }
 }
 
 @media (max-width: 768px) {
