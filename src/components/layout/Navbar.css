@@ -85,11 +85,11 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--bg-dark);
+  background: #ffffff;
   min-width: 160px;
   padding: 8px 0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
@@ -107,7 +107,7 @@
 .nav__dropdown-item {
   display: block;
   padding: 10px 20px;
-  color: rgba(255,255,255,0.8);
+  color: #0a1930;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s ease;
@@ -120,7 +120,7 @@
 
 .nav__dropdown-item:hover {
   color: var(--brand-cyan);
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.03);
 }
 
 /* Light Theme Overrides */

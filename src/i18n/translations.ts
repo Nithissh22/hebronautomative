@@ -58,7 +58,7 @@ export const translations = {
       "rights": "© 2026 Hebron Automotive Pvt Ltd."
     },
     "foundation": {
-      "headerTitle": "Engineered in India.\\nTrusted Globally.",
+      "headerTitle": "Engineered in India.Trusted Globally.",
       "headerSub": "Aluminium die casting and precision machining for automotive assembly lines since 2019.",
       "statEst": "ESTABLISHED",
       "statSqft": "SQ. FT.",
