@@ -41,14 +41,14 @@ const NAV_LINKS = [
 ];
 
 const LANGUAGES = [
-  { code: 'EN', name: 'England', flag: 'gb' },
-  { code: 'JP', name: 'Japan', flag: 'jp' },
-  { code: 'ES', name: 'Spain', flag: 'es' },
+  { code: 'EN', name: 'English', flag: 'gb' },
+  { code: 'JP', name: 'Japanese', flag: 'jp' },
+  { code: 'ES', name: 'Spanish', flag: 'es' },
   { code: 'DE', name: 'German', flag: 'de' },
-  { code: 'IL', name: 'Israel', flag: 'il' },
-  { code: 'RU', name: 'Russia', flag: 'ru' },
-  { code: 'FR', name: 'France', flag: 'fr' },
-  { code: 'PL', name: 'Poland', flag: 'pl' }
+  { code: 'IL', name: 'Hebrew', flag: 'il' },
+  { code: 'RU', name: 'Russian', flag: 'ru' },
+  { code: 'FR', name: 'French', flag: 'fr' },
+  { code: 'PL', name: 'Polish', flag: 'pl' }
 ];
 
 interface NavbarProps {
