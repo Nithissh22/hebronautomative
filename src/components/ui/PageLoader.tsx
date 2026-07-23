@@ -6,7 +6,8 @@ import './PageLoader.css';
 
 export default function PageLoader() {
   const { isTransitioning } = useTransition();
-  const [renderState, setRenderState] = useState<'hidden' | 'enter' | 'exit'>('hidden');
+  // Start with 'enter' so the animation plays on the initial page load
+  const [renderState, setRenderState] = useState<'hidden' | 'enter' | 'exit'>('enter');
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -16,10 +17,10 @@ export default function PageLoader() {
     } else {
       setRenderState((prev) => {
         if (prev === 'enter') {
-          // Trigger exit animation
+          // Trigger exit animation after a short delay for initial load feel
           timer = setTimeout(() => {
             setRenderState('hidden');
-          }, 250);
+          }, 800);
           return 'exit';
         }
         return prev;
@@ -35,15 +36,12 @@ export default function PageLoader() {
 
   return (
     <div className={`page-loader ${renderState === 'enter' ? 'loader-enter' : 'loader-exit'}`}>
-      <div className="loader-logo-container">
-        {/* Outer spinning ring */}
-        <svg className="loader-outer-ring" viewBox="0 0 72 72">
-          <circle cx="36" cy="36" r="34.5" />
-        </svg>
-
-        {/* Static inner circle with text */}
-        <div className="loader-inner-circle">
-          <span>HEBRON</span>
+      <div className="loader-metal-container">
+        {/* Metal glowing ring */}
+        <div className="loader-metal-ring"></div>
+        {/* The user's image in the center */}
+        <div className="loader-metal-image-wrapper">
+          <img src="/images/loading_logo.png" alt="Loading" className="loader-metal-image" />
         </div>
       </div>
     </div>
