@@ -33,9 +33,7 @@ export default function Hero() {
               <em>{t('for')}</em> {t('automotive')}
             </h1>
 
-            <p className="hero__sub" style={{ whiteSpace: 'pre-line' }}>
-              {t('desc')}
-            </p>
+
 
             <div className="hero__actions">
               <NavLink href="/contact" className="btn-primary">
