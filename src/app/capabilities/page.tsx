@@ -138,12 +138,18 @@ function CapabilitiesContent() {
             </p>
             <form className="quote-form" onSubmit={(e) => { 
               e.preventDefault(); 
-              alert('Quote request submitted successfully.'); 
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+              const text = `*New Quote Request: ${activeData?.title}*\n\n*Name:* ${name}\n*Email:* ${email}\n\n*Requirements:*\n${message}`;
+              const whatsappUrl = `https://wa.me/919442619772?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
               setActiveDrawer(null); 
             }}>
-              <input type="text" placeholder="Your Name or Company" required />
-              <input type="email" placeholder="Email Address" required />
-              <textarea placeholder="Describe your part requirements, volume, or timeline..." required rows={4}></textarea>
+              <input type="text" name="name" placeholder="Your Name or Company" required />
+              <input type="email" name="email" placeholder="Email Address" required />
+              <textarea name="message" placeholder="Describe your part requirements, volume, or timeline..." required rows={4}></textarea>
               <button type="submit">Submit Request</button>
             </form>
           </div>
