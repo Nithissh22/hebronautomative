@@ -1,5 +1,8 @@
-export const translations = {
-  "EN": {
+import json
+
+# This script will generate the complete translations.ts file correctly.
+
+en_base = {
     "nav": {
       "about": "About",
       "capabilities": "Capabilities",
@@ -17,14 +20,14 @@ export const translations = {
       "jobVacancies": "Job Vacancies",
       "internships": "Internships",
       "contact": "Contact",
-      "requestQuote": "Request Quote"
+      "requestQuote": "Request Quote",
     },
     "hero": {
       "precision": "Precision Die Casting",
       "for": "for",
       "automotive": "Automotive Assembly Lines",
       "desc": "Aluminium HPDC, GDC, CNC machining and\\nPowder coating — supplied to Gabriel India\\nand Hitachi Astemo since 2019.",
-      "viewCap": "View Capabilities →"
+      "viewCap": "View Capabilities →",
     },
     "capabilities": {
       "eyebrow": "PROCESS CAPABILITIES",
@@ -32,7 +35,7 @@ export const translations = {
       "vmc": "VMC / CNC Machining",
       "gdc": "Gravity Die Casting",
       "powder": "Powder Coating",
-      "viewDetails": "View Details →"
+      "viewDetails": "View Details →",
     },
     "mission": {
       "eyebrow": "OUR CORE VALUES",
@@ -40,22 +43,22 @@ export const translations = {
       "missionTitle": "Our Mission",
       "missionDesc": "To deliver precision-engineered aluminium die casting and machining solutions of the highest quality to the global automotive industry. We are committed to operational excellence, continuous technological advancement, and forging strong partnerships with leading OEMs by consistently exceeding their expectations in performance, durability, and on-time delivery.",
       "visionTitle": "Our Vision",
-      "visionDesc": "To be recognized globally as the most trusted and innovative manufacturing partner in the automotive component sector. We strive to set new benchmarks in precision engineering and sustainable manufacturing practices, driving the future of mobility through our world-class infrastructure and unwavering commitment to quality."
+      "visionDesc: ": "To be recognized globally as the most trusted and innovative manufacturing partner in the automotive component sector. We strive to set new benchmarks in precision engineering and sustainable manufacturing practices, driving the future of mobility through our world-class infrastructure and unwavering commitment to quality.",
     },
     "gallery": {
       "eyebrow": "OUR FACILITIES",
-      "title": "Company Gallery"
+      "title": "Company Gallery",
     },
     "clients": {
       "eyebrow": "TRUSTED BY OEMS",
-      "title": "Our Approved End Customers"
+      "title": "Our Approved End Customers",
     },
     "footer": {
       "desc": "Precision aluminium die casting, machining, and sub-assembly for global automotive OEMs.",
       "processes": "Processes",
       "company": "Company",
       "contact": "Contact",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Engineered in India.\\nTrusted Globally.",
@@ -84,7 +87,7 @@ export const translations = {
       "valCustomers": "Gabriel India — Hosur, Parwanoo, Hitachi Astemo — Tumkur",
       "valCapacity": "2,400 metric tons / year",
       "valTurnover": "INR 41 Crores (~$4.9 Million USD) / Annum",
-      "glanceCert": "CERTIFICATIONS"
+      "glanceCert": "CERTIFICATIONS",
     },
     "capGrid": {
       "whatWeDo": "WHAT WE DO",
@@ -119,8 +122,9 @@ export const translations = {
       "m23Desc": "Standard Room installed – UTM, Spectro, VMM, 2D",
       "milestone": "MILESTONE"
     }
-  },
-  "JP": {
+}
+
+jp_base = {
     "nav": {
       "about": "概要",
       "capabilities": "設備能力",
@@ -138,14 +142,14 @@ export const translations = {
       "jobVacancies": "求人",
       "internships": "インターンシップ",
       "contact": "お問い合わせ",
-      "requestQuote": "見積もり依頼"
+      "requestQuote": "見積もり依頼",
     },
     "hero": {
       "precision": "精密ダイカスト",
       "for": "用途",
       "automotive": "自動車組立ライン",
       "desc": "アルミニウムHPDC、GDC、CNC加工、\\n粉体塗装 — 2019年よりGabriel India\\nおよび日立Astemoに供給。",
-      "viewCap": "設備能力を見る →"
+      "viewCap": "設備能力を見る →",
     },
     "capabilities": {
       "eyebrow": "プロセス能力",
@@ -153,7 +157,7 @@ export const translations = {
       "vmc": "VMC / CNC加工",
       "gdc": "重力ダイカスト",
       "powder": "粉体塗装",
-      "viewDetails": "詳細を見る →"
+      "viewDetails": "詳細を見る →",
     },
     "mission": {
       "eyebrow": "コアバリュー",
@@ -161,27 +165,28 @@ export const translations = {
       "missionTitle": "私たちのミッション",
       "missionDesc": "世界の自動車産業に最高品質の精密アルミニウムダイカストと加工ソリューションを提供します。私たちは、運用エクセレンス、継続的な技術の進歩に尽力し、パフォーマンス、耐久性、納期において常に期待を超えることで、主要OEMとの強力なパートナーシップを築きます。",
       "visionTitle": "私たちのビジョン",
-      "visionDesc": "自動車部品分野において、世界で最も信頼され、革新的な製造パートナーとして認知されること。私たちは、精密エンジニアリングと持続可能な製造実践において新たなベンチマークを設定し、世界クラスのインフラストラクチャと揺るぎない品質へのコミットメントを通じてモビリティの未来を推進するよう努めています。"
+      "visionDesc: ": "自動車部品分野において、世界で最も信頼され、革新的な製造パートナーとして認知されること。私たちは、精密エンジニアリングと持続可能な製造実践において新たなベンチマークを設定し、世界クラスのインフラストラクチャと揺るぎない品質へのコミットメントを通じてモビリティの未来を推進するよう努めています。",
     },
     "gallery": {
       "eyebrow": "施設案内",
-      "title": "会社ギャラリー"
+      "title": "会社ギャラリー",
     },
     "clients": {
       "eyebrow": "OEMによる信頼",
-      "title": "承認されたエンドカスタマー"
+      "title": "承認されたエンドカスタマー",
     },
     "footer": {
       "desc": "世界の自動車OEM向けの精密アルミニウムダイカスト、加工、およびサブアセンブリ。",
       "processes": "プロセス",
       "company": "会社",
       "contact": "連絡先",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "インドで設計。\\n世界で信頼。",
       "headerSub": "2019年以来、自動車組立ライン向けのアルミニウムダイカストおよび精密機械加工。",
       "statEst": "設立年",
+      "statSqft: ": "平方フィート",
       "statEmp": "従業員",
       "statShifts": "シフト/日",
       "eyebrow": "私たちの基盤",
@@ -205,7 +210,6 @@ export const translations = {
       "valCapacity": "2,400 メートルトン / 年",
       "valTurnover": "41クロールインドルピー (~490万米ドル) / 年",
       "glanceCert": "認証",
-      "statSqft": "平方フィート"
     },
     "capGrid": {
       "whatWeDo": "業務内容",
@@ -240,8 +244,9 @@ export const translations = {
       "m23Desc": "標準室設置 – UTM、Spectro、VMM、2D",
       "milestone": "マイルストーン"
     }
-  },
-  "ES": {
+}
+
+es_base = {
     "nav": {
       "about": "Acerca de",
       "capabilities": "Capacidades",
@@ -259,14 +264,14 @@ export const translations = {
       "jobVacancies": "Vacantes de empleo",
       "internships": "Prácticas",
       "contact": "Contacto",
-      "requestQuote": "Solicitar presupuesto"
+      "requestQuote": "Solicitar presupuesto",
     },
     "hero": {
       "precision": "Fundición a presión de precisión",
       "for": "para",
       "automotive": "Líneas de ensamblaje automotriz",
       "desc": "Aluminio HPDC, GDC, mecanizado CNC y\\nrecubrimiento en polvo — suministrado a Gabriel India\\ny Hitachi Astemo desde 2019.",
-      "viewCap": "Ver capacidades →"
+      "viewCap": "Ver capacidades →",
     },
     "capabilities": {
       "eyebrow": "CAPACIDADES DE PROCESO",
@@ -274,7 +279,7 @@ export const translations = {
       "vmc": "Mecanizado VMC / CNC",
       "gdc": "Fundición por gravedad",
       "powder": "Recubrimiento en polvo",
-      "viewDetails": "Ver detalles →"
+      "viewDetails": "Ver detalles →",
     },
     "mission": {
       "eyebrow": "NUESTROS VALORES",
@@ -282,27 +287,28 @@ export const translations = {
       "missionTitle": "Nuestra Misión",
       "missionDesc": "Ofrecer soluciones de fundición a presión de aluminio y mecanizado de ingeniería de precisión de la más alta calidad a la industria automotriz mundial.",
       "visionTitle": "Nuestra Visión",
-      "visionDesc": "Ser reconocidos mundialmente como el socio de fabricación más confiable e innovador en el sector de componentes de automoción."
+      "visionDesc: ": "Ser reconocidos mundialmente como el socio de fabricación más confiable e innovador en el sector de componentes de automoción.",
     },
     "gallery": {
       "eyebrow": "NUESTRAS INSTALACIONES",
-      "title": "Galería de la empresa"
+      "title": "Galería de la empresa",
     },
     "clients": {
       "eyebrow": "CONFIANZA DE OEMS",
-      "title": "Nuestros clientes finales aprobados"
+      "title": "Nuestros clientes finales aprobados",
     },
     "footer": {
       "desc": "Fundición a presión de aluminio de precisión, mecanizado y subensamblaje.",
       "processes": "Procesos",
       "company": "Empresa",
       "contact": "Contacto",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Diseñado en India.\\nConfiable Globalmente.",
       "headerSub": "Fundición a presión de aluminio y mecanizado de precisión para líneas de montaje automotriz desde 2019.",
       "statEst": "FUNDADO",
+      "statSqft: ": "PIES CUADRADOS",
       "statEmp": "EMPLEADOS",
       "statShifts": "TURNOS/DÍA",
       "eyebrow": "Nuestra fundación",
@@ -326,7 +332,6 @@ export const translations = {
       "valCapacity": "2,400 toneladas métricas / año",
       "valTurnover": "41 Crores INR (~4.9 Millones USD) / Año",
       "glanceCert": "CERTIFICACIONES",
-      "statSqft": "PIES CUADRADOS"
     },
     "capGrid": {
       "whatWeDo": "LO QUE HACEMOS",
@@ -358,11 +363,12 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "Nueva instalación de mecanizado y ensamblaje para Gabriel",
       "m23": "2023",
-      "milestone": "HITO",
-      "m23Desc": "Sala Estándar instalada – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "Sala Estándar instalada – UTM, Spectro, VMM, 2D",
+      "milestone": "HITO"
     }
-  },
-  "DE": {
+}
+
+de_base = {
     "nav": {
       "about": "Über uns",
       "capabilities": "Fähigkeiten",
@@ -380,14 +386,14 @@ export const translations = {
       "jobVacancies": "Stellenangebote",
       "internships": "Praktika",
       "contact": "Kontakt",
-      "requestQuote": "Angebot anfordern"
+      "requestQuote": "Angebot anfordern",
     },
     "hero": {
       "precision": "Präzisionsdruckguss",
       "for": "für",
       "automotive": "Automobilmontagelinien",
       "desc": "Aluminium HPDC, GDC, CNC-Bearbeitung und\\nPulverbeschichtung — geliefert an Gabriel India\\nund Hitachi Astemo seit 2019.",
-      "viewCap": "Fähigkeiten ansehen →"
+      "viewCap": "Fähigkeiten ansehen →",
     },
     "capabilities": {
       "eyebrow": "PROZESSFÄHIGKEITEN",
@@ -395,7 +401,7 @@ export const translations = {
       "vmc": "VMC / CNC-Bearbeitung",
       "gdc": "Schwerkraftguss",
       "powder": "Pulverbeschichtung",
-      "viewDetails": "Details ansehen →"
+      "viewDetails": "Details ansehen →",
     },
     "mission": {
       "eyebrow": "UNSERE GRUNDWERTE",
@@ -403,27 +409,28 @@ export const translations = {
       "missionTitle": "Unsere Mission",
       "missionDesc": "Bereitstellung von präzisionsgefertigten Aluminiumdruckguss- und Bearbeitungslösungen von höchster Qualität für die globale Automobilindustrie.",
       "visionTitle": "Unsere Vision",
-      "visionDesc": "Weltweit als zuverlässigster und innovativster Fertigungspartner im Bereich Automobilkomponenten anerkannt zu werden."
+      "visionDesc: ": "Weltweit als zuverlässigster und innovativster Fertigungspartner im Bereich Automobilkomponenten anerkannt zu werden.",
     },
     "gallery": {
       "eyebrow": "UNSERE EINRICHTUNGEN",
-      "title": "Unternehmensgalerie"
+      "title": "Unternehmensgalerie",
     },
     "clients": {
       "eyebrow": "VERTRAUEN VON OEMS",
-      "title": "Unsere zugelassenen Endkunden"
+      "title": "Unsere zugelassenen Endkunden",
     },
     "footer": {
       "desc": "Präzisions-Aluminiumdruckguss, Bearbeitung und Baugruppenmontage.",
       "processes": "Prozesse",
       "company": "Unternehmen",
       "contact": "Kontakt",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Entwickelt in Indien.\\nWeltweit vertraut.",
       "headerSub": "Aluminium-Druckguss und Präzisionsbearbeitung für Automobilmontagelinien seit 2019.",
       "statEst": "GEGRÜNDET",
+      "statSqft: ": "QUADRATFUSS",
       "statEmp": "MITARBEITER",
       "statShifts": "SCHICHTEN/TAG",
       "eyebrow": "Unsere Gründung",
@@ -447,7 +454,6 @@ export const translations = {
       "valCapacity": "2.400 Tonnen / Jahr",
       "valTurnover": "41 Crore INR (~4,9 Millionen USD) / Jahr",
       "glanceCert": "ZERTIFIZIERUNGEN",
-      "statSqft": "QUADRATFUSS"
     },
     "capGrid": {
       "whatWeDo": "WAS WIR TUN",
@@ -479,11 +485,12 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "Neue Bearbeitungs- und Buchsenmontage für Gabriel",
       "m23": "2023",
-      "milestone": "MEILENSTEIN",
-      "m23Desc": "Standardraum installiert – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "Standardraum installiert – UTM, Spectro, VMM, 2D",
+      "milestone": "MEILENSTEIN"
     }
-  },
-  "IL": {
+}
+
+il_base = {
     "nav": {
       "about": "אודות",
       "capabilities": "יכולות",
@@ -501,14 +508,14 @@ export const translations = {
       "jobVacancies": "משרות פנויות",
       "internships": "התמחויות",
       "contact": "צור קשר",
-      "requestQuote": "בקש הצעת מחיר"
+      "requestQuote": "בקש הצעת מחיר",
     },
     "hero": {
       "precision": "יציקת תבנית מדויקת",
       "for": "עבור",
       "automotive": "קווי הרכבה לרכב",
       "desc": "אלומיניום HPDC, GDC, עיבוד CNC וציפוי אבקה — סופק ל-Gabriel India ו-Hitachi Astemo מאז 2019.",
-      "viewCap": "צפה ביכולות →"
+      "viewCap": "צפה ביכולות →",
     },
     "capabilities": {
       "eyebrow": "יכולות תהליך",
@@ -516,7 +523,7 @@ export const translations = {
       "vmc": "עיבוד VMC / CNC",
       "gdc": "יציקת כבידה",
       "powder": "ציפוי אבקה",
-      "viewDetails": "צפה בפרטים →"
+      "viewDetails": "צפה בפרטים →",
     },
     "mission": {
       "eyebrow": "ערכי הליבה שלנו",
@@ -524,27 +531,28 @@ export const translations = {
       "missionTitle": "המשימה שלנו",
       "missionDesc": "לספק פתרונות יציקה ועיבוד אלומיניום מדויקים באיכות הגבוהה ביותר לתעשיית הרכב העולמית.",
       "visionTitle": "החזון שלנו",
-      "visionDesc": "להיות מוכרים בעולם כשותף הייצור האמין והחדשני ביותר בתחום רכיבי הרכב."
+      "visionDesc: ": "להיות מוכרים בעולם כשותף הייצור האמין והחדשני ביותר בתחום רכיבי הרכב.",
     },
     "gallery": {
       "eyebrow": "המתקנים שלנו",
-      "title": "גלריית החברה"
+      "title": "גלריית החברה",
     },
     "clients": {
       "eyebrow": "אמון על ידי יצרני ציוד מקורי",
-      "title": "לקוחות הקצה המאושרים שלנו"
+      "title": "לקוחות הקצה המאושרים שלנו",
     },
     "footer": {
       "desc": "יציקת אלומיניום מדויקת, עיבוד והרכבת משנה ליצרני רכב גלובליים.",
       "processes": "תהליכים",
       "company": "חברה",
       "contact": "צור קשר",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "הונדס בהודו.\\nאמין ברחבי העולם.",
       "headerSub": "יציקת אלומיניום ועיבוד שבבי מדויק לקווי הרכבה לרכב מאז 2019.",
       "statEst": "הוקמה",
+      "statSqft: ": "רגל מרובע",
       "statEmp": "עובדים",
       "statShifts": "משמרות/יום",
       "eyebrow": "הבסיס שלנו",
@@ -568,7 +576,6 @@ export const translations = {
       "valCapacity": "2,400 טון מטרי / שנה",
       "valTurnover": "41 קרוד רופי (~4.9 מיליון דולר) / שנה",
       "glanceCert": "אישורים",
-      "statSqft": "רגל מרובע"
     },
     "capGrid": {
       "whatWeDo": "מה אנחנו עושים",
@@ -600,11 +607,12 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "מתקן עיבוד והרכבת תותבים חדש עבור גבריאל",
       "m23": "2023",
-      "milestone": "אבן דרך",
-      "m23Desc": "חדר תקן הותקן – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "חדר תקן הותקן – UTM, Spectro, VMM, 2D",
+      "milestone": "אבן דרך"
     }
-  },
-  "RU": {
+}
+
+ru_base = {
     "nav": {
       "about": "О нас",
       "capabilities": "Возможности",
@@ -622,14 +630,14 @@ export const translations = {
       "jobVacancies": "Вакансии",
       "internships": "Стажировки",
       "contact": "Контакты",
-      "requestQuote": "Запросить расценки"
+      "requestQuote": "Запросить расценки",
     },
     "hero": {
       "precision": "Прецизионное литье",
       "for": "для",
       "automotive": "Автомобильных сборочных линий",
       "desc": "Алюминий HPDC, GDC, ЧПУ обработка и\\nпорошковая окраска — поставляется Gabriel India\\nи Hitachi Astemo с 2019 года.",
-      "viewCap": "Просмотр возможностей →"
+      "viewCap": "Просмотр возможностей →",
     },
     "capabilities": {
       "eyebrow": "ВОЗМОЖНОСТИ ПРОЦЕССА",
@@ -637,7 +645,7 @@ export const translations = {
       "vmc": "VMC / ЧПУ обработка",
       "gdc": "Кокильное литье",
       "powder": "Порошковая окраска",
-      "viewDetails": "Подробнее →"
+      "viewDetails": "Подробнее →",
     },
     "mission": {
       "eyebrow": "НАШИ ОСНОВНЫЕ ЦЕННОСТИ",
@@ -645,27 +653,28 @@ export const translations = {
       "missionTitle": "Наша Миссия",
       "missionDesc": "Предоставлять прецизионные решения для литья алюминия под давлением высочайшего качества.",
       "visionTitle": "Наше Видение",
-      "visionDesc": "Быть признанным во всем мире как самый надежный и инновационный производственный партнер."
+      "visionDesc: ": "Быть признанным во всем мире как самый надежный и инновационный производственный партнер.",
     },
     "gallery": {
       "eyebrow": "НАШИ ОБЪЕКТЫ",
-      "title": "Галерея компании"
+      "title": "Галерея компании",
     },
     "clients": {
       "eyebrow": "ДОВЕРЯЮТ OEM",
-      "title": "Наши одобренные конечные клиенты"
+      "title": "Наши одобренные конечные клиенты",
     },
     "footer": {
       "desc": "Прецизионное литье, обработка и сборка алюминия для OEM-производителей.",
       "processes": "Процессы",
       "company": "Компания",
       "contact": "Контакты",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Спроектировано в Индии.\\nНадежно по всему миру.",
       "headerSub": "Литье алюминия под давлением и высокоточная обработка для автомобильных сборочных линий с 2019 года.",
       "statEst": "ОСНОВАНО",
+      "statSqft: ": "КВ. ФУТОВ",
       "statEmp": "СОТРУДНИКОВ",
       "statShifts": "СМЕН/ДЕНЬ",
       "eyebrow": "Наш фундамент",
@@ -689,7 +698,6 @@ export const translations = {
       "valCapacity": "2400 метрических тонн / год",
       "valTurnover": "41 крор рупий (~4,9 млн долл. США) / год",
       "glanceCert": "СЕРТИФИКАЦИЯ",
-      "statSqft": "КВ. ФУТОВ"
     },
     "capGrid": {
       "whatWeDo": "ЧТО МЫ ДЕЛАЕМ",
@@ -721,11 +729,12 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "Новый цех обработки и сборки втулок для Gabriel",
       "m23": "2023",
-      "milestone": "ВЕХА",
-      "m23Desc": "Установлено стандартное помещение – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "Установлено стандартное помещение – UTM, Spectro, VMM, 2D",
+      "milestone": "ВЕХА"
     }
-  },
-  "FR": {
+}
+
+fr_base = {
     "nav": {
       "about": "À propos",
       "capabilities": "Capacités",
@@ -743,14 +752,14 @@ export const translations = {
       "jobVacancies": "Offres d'emploi",
       "internships": "Stages",
       "contact": "Contact",
-      "requestQuote": "Demander un devis"
+      "requestQuote": "Demander un devis",
     },
     "hero": {
       "precision": "Moulage sous pression de précision",
       "for": "pour",
       "automotive": "Lignes d'assemblage automobile",
       "desc": "Aluminium HPDC, GDC, usinage CNC et revêtement en poudre — fourni à Gabriel India et Hitachi Astemo depuis 2019.",
-      "viewCap": "Voir les capacités →"
+      "viewCap": "Voir les capacités →",
     },
     "capabilities": {
       "eyebrow": "CAPACITÉS DE PROCESSUS",
@@ -758,7 +767,7 @@ export const translations = {
       "vmc": "Usinage VMC / CNC",
       "gdc": "Moulage par gravité",
       "powder": "Revêtement en poudre",
-      "viewDetails": "Voir les détails →"
+      "viewDetails": "Voir les détails →",
     },
     "mission": {
       "eyebrow": "NOS VALEURS FONDAMENTALES",
@@ -766,27 +775,28 @@ export const translations = {
       "missionTitle": "Notre Mission",
       "missionDesc": "Fournir des solutions de moulage sous pression et d'usinage d'aluminium de précision de la plus haute qualité.",
       "visionTitle": "Notre Vision",
-      "visionDesc": "Être reconnu mondialement comme le partenaire de fabrication le plus fiable et le plus innovant."
+      "visionDesc: ": "Être reconnu mondialement comme le partenaire de fabrication le plus fiable et le plus innovant.",
     },
     "gallery": {
       "eyebrow": "NOS INSTALLATIONS",
-      "title": "Galerie de l'entreprise"
+      "title": "Galerie de l'entreprise",
     },
     "clients": {
       "eyebrow": "CONFIANCE DES OEM",
-      "title": "Nos clients finaux approuvés"
+      "title": "Nos clients finaux approuvés",
     },
     "footer": {
       "desc": "Moulage sous pression en aluminium de précision, usinage et sous-assemblage.",
       "processes": "Processus",
       "company": "Entreprise",
       "contact": "Contact",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Conçu en Inde.\\nReconnu mondialement.",
       "headerSub": "Moulage sous pression en aluminium et usinage de précision pour les lignes d'assemblage automobile depuis 2019.",
       "statEst": "CRÉATION",
+      "statSqft: ": "PIEDS CARRÉS",
       "statEmp": "EMPLOYÉS",
       "statShifts": "QUARTS/JOUR",
       "eyebrow": "Notre fondation",
@@ -810,7 +820,6 @@ export const translations = {
       "valCapacity": "2 400 tonnes métriques / an",
       "valTurnover": "41 crores INR (~4,9 millions USD) / an",
       "glanceCert": "CERTIFICATIONS",
-      "statSqft": "PIEDS CARRÉS"
     },
     "capGrid": {
       "whatWeDo": "CE QUE NOUS FAISONS",
@@ -842,11 +851,12 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "Nouvelle installation d'usinage et d'assemblage pour Gabriel",
       "m23": "2023",
-      "milestone": "JALON",
-      "m23Desc": "Salle standard installée – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "Salle standard installée – UTM, Spectro, VMM, 2D",
+      "milestone": "JALON"
     }
-  },
-  "PL": {
+}
+
+pl_base = {
     "nav": {
       "about": "O nas",
       "capabilities": "Możliwości",
@@ -864,14 +874,14 @@ export const translations = {
       "jobVacancies": "Oferty pracy",
       "internships": "Staży",
       "contact": "Kontakt",
-      "requestQuote": "Poproś o wycenę"
+      "requestQuote": "Poproś o wycenę",
     },
     "hero": {
       "precision": "Precyzyjne odlewanie ciśnieniowe",
       "for": "dla",
       "automotive": "Linii montażowych motoryzacji",
       "desc": "Aluminium HPDC, GDC, obróbka CNC i\\nmalowanie proszkowe — dostarczane do Gabriel India\\ni Hitachi Astemo od 2019 roku.",
-      "viewCap": "Zobacz możliwości →"
+      "viewCap": "Zobacz możliwości →",
     },
     "capabilities": {
       "eyebrow": "MOŻLIWOŚCI PROCESOWE",
@@ -879,7 +889,7 @@ export const translations = {
       "vmc": "Obróbka VMC / CNC",
       "gdc": "Odlewanie grawitacyjne",
       "powder": "Malowanie proszkowe",
-      "viewDetails": "Zobacz szczegóły →"
+      "viewDetails": "Zobacz szczegóły →",
     },
     "mission": {
       "eyebrow": "NASZE WARTOŚCI",
@@ -887,27 +897,28 @@ export const translations = {
       "missionTitle": "Nasza Misja",
       "missionDesc": "Dostarczać najwyższej jakości precyzyjne rozwiązania z odlewania aluminium i obróbki dla globalnego przemysłu motoryzacyjnego.",
       "visionTitle": "Nasza Wizja",
-      "visionDesc": "Być rozpoznawanym na całym świecie jako najbardziej zaufany i innowacyjny partner produkcyjny."
+      "visionDesc: ": "Być rozpoznawanym na całym świecie jako najbardziej zaufany i innowacyjny partner produkcyjny.",
     },
     "gallery": {
       "eyebrow": "NASZE OBIEKTY",
-      "title": "Galeria firmy"
+      "title": "Galeria firmy",
     },
     "clients": {
       "eyebrow": "ZAUFALI NAM OEM",
-      "title": "Nasi zatwierdzeni klienci końcowi"
+      "title": "Nasi zatwierdzeni klienci końcowi",
     },
     "footer": {
       "desc": "Precyzyjne odlewanie, obróbka i montaż aluminium dla motoryzacji.",
       "processes": "Procesy",
       "company": "Firma",
       "contact": "Kontakt",
-      "rights": "© 2026 Hebron Automotive Pvt Ltd."
+      "rights": "© 2026 Hebron Automotive Pvt Ltd.",
     },
     "foundation": {
       "headerTitle": "Zaprojektowane w Indiach.\\nZaufane na świecie.",
       "headerSub": "Odlewanie ciśnieniowe aluminium i precyzyjna obróbka dla motoryzacyjnych linii montażowych od 2019 roku.",
       "statEst": "ZALOŻONO",
+      "statSqft: ": "STÓP KW.",
       "statEmp": "PRACOWNICY",
       "statShifts": "ZMIANY/DZIEŃ",
       "eyebrow": "Nasza fundacja",
@@ -931,7 +942,6 @@ export const translations = {
       "valCapacity": "2400 ton metrycznych / rok",
       "valTurnover": "41 krorów INR (~4,9 mln USD) / rok",
       "glanceCert": "CERTYFIKATY",
-      "statSqft": "STÓP KW."
     },
     "capGrid": {
       "whatWeDo": "CO ROBIMY",
@@ -963,10 +973,37 @@ export const translations = {
       "m22": "2022",
       "m22Desc": "Nowy zakład obróbki i montażu tulei dla Gabriel",
       "m23": "2023",
-      "milestone": "KAMIEŃ MILOWY",
-      "m23Desc": "Standard Room zainstalowany – UTM, Spectro, VMM, 2D"
+      "m23Desc: ": "Standard Room zainstalowany – UTM, Spectro, VMM, 2D",
+      "milestone": "KAMIEŃ MILOWY"
     }
-  }
-} as const;
+}
 
-export type LanguageCode = keyof typeof translations;
+full_dict = {
+    "EN": en_base,
+    "JP": jp_base,
+    "ES": es_base,
+    "DE": de_base,
+    "IL": il_base,
+    "RU": ru_base,
+    "FR": fr_base,
+    "PL": pl_base
+}
+
+# Clean up any bad keys that might have been typed like "statSqft: " instead of "statSqft"
+for lang, sections in full_dict.items():
+    for section, values in sections.items():
+        keys_to_change = []
+        for k in values:
+            if k.endswith(": "):
+                keys_to_change.append(k)
+        for k in keys_to_change:
+            clean_k = k.replace(": ", "")
+            values[clean_k] = values[k]
+            del values[k]
+
+out_str = "export const translations = " + json.dumps(full_dict, indent=2, ensure_ascii=False) + " as const;\n\nexport type LanguageCode = keyof typeof translations;\n"
+
+with open("src/i18n/translations.ts", "w", encoding="utf-8") as f:
+    f.write(out_str)
+
+print("translations.ts rebuilt perfectly!")
