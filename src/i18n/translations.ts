@@ -102,9 +102,9 @@ export const translations = {
       "traceability": "TRACEABILITY"
     },
     "cta": {
-      "readyScale": "Ready to scale\\nyour assembly line?",
+      "readyScale": "Ready to scale your assembly line?",
       "sendDrawings": "Send us your drawings for a technical review and quote within 48 hours.",
-      "reqQuote": "REQUEST QUOTE",
+      "reqQuote": "ENQUIRY",
       "emailSales": "Email Sales"
     },
     "timeline": {

@@ -3,6 +3,7 @@
 import React from 'react';
 import NavLink from '@/components/ui/NavLink';
 import { useTranslation } from '@/i18n/LanguageContext';
+import TimelineShowcase from '@/components/about/TimelineShowcase';
 import './CapabilitiesOverview.css';
 
 export default function CapabilitiesOverview() {
@@ -21,28 +22,13 @@ export default function CapabilitiesOverview() {
           >
             <source src="/videos/video1.mp4" type="video/mp4" />
           </video>
-          <div className="cap-video-overlay"></div>
           <div className="cap-video-content">
-            <h2 className="cap-video-heading">Precision Machining Excellence</h2>
+            <h2 className="cap-video-heading">Toyo Die Casting Machine</h2>
           </div>
         </div>
         
-        {/* VIDEO 2 */}
-        <div className="cap-video-container">
-          <video 
-            className="cap-video-element" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-          >
-            <source src="/videos/video2.mp4" type="video/mp4" />
-          </video>
-          <div className="cap-video-overlay"></div>
-          <div className="cap-video-content">
-            <h2 className="cap-video-heading">Automotive Component Assembly</h2>
-          </div>
-        </div>
+        {/* TIMELINE INSTEAD OF VIDEO 2 */}
+        <TimelineShowcase />
       </div>
       
       <div className="cap-overview__header" style={{ marginTop: '80px' }}>
@@ -58,9 +44,8 @@ export default function CapabilitiesOverview() {
             specs: [
               ['Tonnage', '120T – 800T'],
               ['Machines', '7 PDC Lines'],
-              ['Alloys', 'ADC12, A380, LM6'],
-              ['Process', 'Cold Chamber HPDC'],
             ],
+            image: '/images/hpdc_cap.jpg',
           },
           {
             num: '02',
@@ -69,9 +54,8 @@ export default function CapabilitiesOverview() {
             specs: [
               ['Centers', '3/4/5-axis'],
               ['Make', 'HAAS USA'],
-              ['Accuracy', '±0.005mm'],
-              ['Finish', 'Ra 0.8–6.3 μm'],
             ],
+            image: '/images/cnc_cap.jpg',
           },
           {
             num: '03',
@@ -80,9 +64,8 @@ export default function CapabilitiesOverview() {
             specs: [
               ['GDC Units', '7 Machines'],
               ['Furnaces', '3 Melting + 1 Holding'],
-              ['Parts', 'Outer Tube LH & RH'],
-              ['Process', 'Tilt + Fixed GDC'],
             ],
+            image: '/images/gdc_cap.jpg',
           },
           {
             num: '04',
@@ -91,9 +74,8 @@ export default function CapabilitiesOverview() {
             specs: [
               ['Lines', '2 Semi-Auto Lines'],
               ['Testing', 'DFT Meter Lab'],
-              ['Finish', 'Corrosion resistant'],
-              ['Standard', 'Automotive grade'],
             ],
+            image: '/images/powder_cap.jpg',
           },
         ].map(cap => (
           <NavLink href={`/capabilities${cap.id ? `?id=${cap.id}` : ''}`} className="cap-card" key={cap.num}>
@@ -109,7 +91,10 @@ export default function CapabilitiesOverview() {
                 </div>
               ))}
             </div>
-            <span className="cap-card__link">
+            <div className="cap-card__image-wrapper" style={{ marginTop: '24px', flex: 1, minHeight: '120px', position: 'relative', borderRadius: '4px', overflow: 'hidden' }}>
+              <img src={cap.image} alt={cap.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <span className="cap-card__link" style={{ marginTop: '24px' }}>
               {t('viewDetails')}
             </span>
           </NavLink>

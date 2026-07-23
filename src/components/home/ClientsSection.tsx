@@ -26,8 +26,6 @@ export default function ClientsSection() {
                 <img src="/assets/Royal_Enfield_v2.png" alt="Royal Enfield" className="client-logo" />
                 <img src="/assets/Mahindra_v2.png" alt="Mahindra" className="client-logo" />
                 <img src="/assets/Ather_Energy_v2.png" alt="Ather Energy" className="client-logo" />
-                <img src="/assets/Yamaha_v2.png" alt="Yamaha" className="client-logo" />
-                <img src="/assets/Jawa_Motorcycles_v2.png" alt="Jawa Motorcycles" className="client-logo" />
                 <img src="/assets/Ola_Electric.svg" alt="Ola Electric" className="client-logo" />
               </div>
             ))}

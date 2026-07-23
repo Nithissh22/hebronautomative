@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer__col footer__col--brand">
           <div className="footer__logo-wrapper">
             <img src="/images/hebron-logo_v2.png" alt="Hebron Automotive" className="footer__logo" />
-            <span className="footer__logo-text">HEBRON AUTOMOTIVE</span>
+            <span className="footer__logo-text" style={{ whiteSpace: 'nowrap' }}>HEBRON AUTOMOTIVE PRODUCTS</span>
           </div>
           <p className="footer__text">
             {t('desc')}
@@ -51,7 +51,7 @@ export default function Footer() {
 
         <div className="footer__col">
           <h4 className="footer__h4">{t('contact')}</h4>
-          <p className="footer__text">Plot No. 123, Sector 4<br/>Auto Nagar, Hosur, TN, India</p>
+          <p className="footer__text">Plot No. 123, Sector 4<br/>Auto Nagar, Hosur, Tamil Nadu, India</p>
           <a href="mailto:hebronautomotive@gmail.com" className="footer__link" target="_blank" rel="noopener noreferrer">hebronautomotive@gmail.com</a>
           <a href="https://wa.me/919442619772" className="footer__link" target="_blank" rel="noopener noreferrer">+91 94426 19772</a>
         </div>

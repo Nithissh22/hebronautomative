@@ -29,16 +29,11 @@ export default function Hero() {
         <div className="hero__body">
           <div className="hero__center">
             <h1 className="hero__h1">
-              <span className="hero__main-heading">{t('precision')}</span><br/>
-              <em>{t('for')}</em> {t('automotive')}
+              <span className="hero__main-heading">Precision Die Casting components</span><br/>
+              <span className="hero__company-name" style={{ marginTop: '20px' }}>HEBRON AUTOMOTIVE PRODUCTS</span>
             </h1>
 
-
-
             <div className="hero__actions">
-              <NavLink href="/contact" className="btn-primary">
-                {t('requestQuote') || 'Request Quote →'}
-              </NavLink>
               <NavLink href="/capabilities" className="btn-outline">
                 {t('viewCap')}
               </NavLink>

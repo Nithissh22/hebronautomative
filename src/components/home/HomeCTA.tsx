@@ -19,9 +19,6 @@ export default function HomeCTA() {
           <NavLink href="/contact" className="btn-primary">
             {t('reqQuote')}
           </NavLink>
-          <a href="mailto:sales@hebronautomotive.com" className="btn-outline--light">
-            {t('emailSales')}
-          </a>
         </div>
       </div>
     </section>

@@ -16,13 +16,26 @@ export default function MissionVision() {
         </div>
         
         <div className="mission-vision__content">
-          <div className="mission-card">
-            <h3>{t('missionTitle')}</h3>
-            <p>{t('missionDesc')}</p>
+          {/* Mission: Image on Left, Text on Right */}
+          <div className="mission-row">
+            <div className="mission-image-wrapper">
+              <img src="/images/mission_img.jpg" alt="Our Mission" className="mission-image" />
+            </div>
+            <div className="mission-card">
+              <h3>{t('missionTitle')}</h3>
+              <p>{t('missionDesc')}</p>
+            </div>
           </div>
-          <div className="mission-card">
-            <h3>{t('visionTitle')}</h3>
-            <p>{t('visionDesc')}</p>
+
+          {/* Vision: Text on Left, Image on Right */}
+          <div className="mission-row mission-row--reverse">
+            <div className="mission-image-wrapper">
+              <img src="/images/vision_img.jpg" alt="Our Vision" className="mission-image" />
+            </div>
+            <div className="mission-card">
+              <h3>{t('visionTitle')}</h3>
+              <p>{t('visionDesc')}</p>
+            </div>
           </div>
         </div>
       </div>

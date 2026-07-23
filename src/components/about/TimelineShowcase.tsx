@@ -17,13 +17,13 @@ export default function TimelineShowcase() {
   const t = useTranslation('timeline');
 
   const milestones = [
-    { year: 2019, text: "Started Hebron Automotive with 2 HPDC machines", icon: <IconFactory /> },
-    { year: 2020, text: t('m20Desc'), icon: <IconSpray /> },
-    { year: 2021, text: t('m21Desc'), icon: <IconSettings /> },
-    { year: 2022, text: t('m22Desc'), icon: <IconTool /> },
-    { year: 2023, text: t('m23Desc'), icon: <IconMicroscope /> },
-    { year: 2024, text: "2 more die casting machines added (180T & 250T)", icon: <IconEngine /> },
-    { year: 2025, text: "7 GDC machines + 5 VMC machines + Tool Room setup", icon: <IconRocket /> },
+    { year: '2019', text: "Started Hebron Automotive with 2 pressure die casting machines", icon: <IconFactory /> },
+    { year: '2020', text: "Started semi-automotive powder coating facility", icon: <IconSpray /> },
+    { year: '2021', text: "Added 2 more die casting machines", icon: <IconSettings /> },
+    { year: '2022', text: "New Facility for machining and bush assembly for Gabriel Parts", icon: <IconTool /> },
+    { year: '2023', text: "Added 2 more die casting machines 180 ton & 250 Ton", icon: <IconMicroscope /> },
+    { year: '2024', text: "Installed Standard room for availability of all testing facilities, UTM, Spectro Analysis, VMM, 2D etc & Added 1PDC machine", icon: <IconEngine /> },
+    { year: '2025&26', text: "Added 7 GDC machines & 5 VMC Machines for Outer tube parts and Tool Room Setup with wire cutting machine, Surface Machine & 6 CNC machines and added one more PDC machine", icon: <IconRocket /> },
   ];
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -73,7 +73,7 @@ export default function TimelineShowcase() {
       <div className="container">
         
         <div className="growth-header">
-          <h2 className="growth-heading">{t('growthStory')}</h2>
+          <h2 className="growth-heading">Journey of Hebron</h2>
         </div>
 
         {/* 4-Column Journey Layout */}
