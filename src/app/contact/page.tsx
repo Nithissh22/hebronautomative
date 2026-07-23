@@ -130,13 +130,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="form-group">
-                <div className="drag-drop-zone">
-                  <span className="drag-drop-title">Upload Component Drawing</span>
-                  <span className="drag-drop-sub">DXF · STEP · PDF · IGES</span>
-                </div>
-              </div>
-
               <div className="trust-signals">
                 <div className="trust-signal">
                   <Icons.Check /> All enquiries treated as confidential
