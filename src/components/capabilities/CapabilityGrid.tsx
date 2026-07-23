@@ -72,10 +72,10 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
           <p>{t('readyPartner')}</p>
           <div className="footer-cta-buttons">
             <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              {t('reqQuote')}
+              Enquery →
             </button>
             <a href="#" className="btn-outline" onClick={(e) => e.preventDefault()}>
-              {t('downloadDeck')}
+              Download Capabilities Deck
             </a>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import CapabilityGrid from '@/components/capabilities/CapabilityGrid';
 import CapabilityDetail from '@/components/capabilities/CapabilityDetail';
+import Footer from '@/components/layout/Footer';
 import { capabilitiesList } from '@/components/capabilities/capabilityData';
 import { useSearchParams } from 'next/navigation';
 import './capabilities.css';
@@ -161,8 +162,11 @@ function CapabilitiesContent() {
 
 export default function CapabilitiesPage() {
   return (
-    <Suspense fallback={<div className="page-fade-in"><Navbar theme="light" /><div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading...</div></div>}>
-      <CapabilitiesContent />
-    </Suspense>
+    <>
+      <Suspense fallback={<div className="page-fade-in"><Navbar theme="light" /><div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading...</div></div>}>
+        <CapabilitiesContent />
+      </Suspense>
+      <Footer />
+    </>
   );
 }

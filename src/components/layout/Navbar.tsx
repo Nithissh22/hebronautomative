@@ -141,31 +141,25 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
       </nav>
 
       <div className="nav__right">
-        <div 
-          className="nav__lang-switcher"
-          onMouseEnter={() => setLangDropdownOpen(true)}
-          onMouseLeave={() => setLangDropdownOpen(false)}
-        >
-          <div className="nav__lang-current">
-            <img src={`https://flagcdn.com/w20/${LANGUAGES.find(l => l.code === language)?.flag || 'gb'}.png`} alt="flag" style={{ width: 16, borderRadius: 2 }} />
-            {language}
-          </div>
-          <div className={`nav__dropdown-menu nav__lang-menu ${langDropdownOpen ? 'is-active' : ''}`}>
-            {LANGUAGES.map(lang => (
-              <button 
-                key={lang.code} 
-                className="nav__dropdown-item nav__lang-btn"
-                onClick={() => {
-                  setLanguage(lang.code as any);
-                  setLangDropdownOpen(false);
-                }}
-                style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
-              >
-                <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt={lang.name} style={{ width: 16, borderRadius: 2 }} />
-                {lang.name}
-              </button>
-            ))}
-          </div>
+        <div className="nav__lang-switcher" style={{ display: 'flex', gap: '12px', alignItems: 'center', marginLeft: '16px', marginRight: '16px' }}>
+          {LANGUAGES.map(lang => (
+            <button 
+              key={lang.code} 
+              className="nav__lang-btn-inline"
+              onClick={() => setLanguage(lang.code as any)}
+              style={{ 
+                background: 'none', border: 'none', padding: 0, cursor: 'pointer', 
+                opacity: language === lang.code ? 1 : 0.5,
+                transition: 'opacity 0.2s',
+                display: 'flex', alignItems: 'center', gap: '4px',
+                fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, color: 'inherit'
+              }}
+              title={lang.name}
+            >
+              <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt={lang.name} style={{ width: 16, borderRadius: 2 }} />
+              <span>{lang.code}</span>
+            </button>
+          ))}
         </div>
 
         <NavLink href="/contact" className="nav__cta">

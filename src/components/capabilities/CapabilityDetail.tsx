@@ -21,6 +21,22 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
     setActiveTab('equipment');
   }
 
+  const carouselImages = [
+    '/images/die-casting-parts.png',
+    '/images/hpdc_cap.jpg',
+    '/images/cnc_cap.jpg',
+    '/images/quality-inspection.jpg',
+    '/images/powder-coating.png'
+  ];
+  const [imgIndex, setImgIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setImgIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="capability-detail-container" role="region" aria-label={`${cap.title} Details`}>
       <MiniNav activeIndex={activeIndex} onSelect={onSelect} />
@@ -31,16 +47,28 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
 
       <div className="detail-split">
         {/* Left Panel */}
-        <div className="detail-media-panel">
-          <img src={cap.imageSrc} alt={cap.title} className="detail-media-video" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+        <div className="detail-media-panel" style={{ position: 'relative' }}>
+          {carouselImages.map((src, i) => (
+            <img 
+              key={src} 
+              src={src} 
+              alt={cap.title} 
+              className="detail-media-video" 
+              style={{ 
+                position: 'absolute', top: 0, left: 0, 
+                width: '100%', height: '100%', objectFit: 'cover',
+                opacity: imgIndex === i ? 1 : 0, transition: 'opacity 1s ease-in-out'
+              }} 
+            />
+          ))}
           <div className="detail-media-gradient"></div>
           
-          <div className="detail-media-watermark">
+          <div className="detail-media-watermark" style={{ zIndex: 10 }}>
             {cap.title}
           </div>
           
           {cap.certBadge && (
-            <div className="detail-media-badge">
+            <div className="detail-media-badge" style={{ zIndex: 10 }}>
               {cap.certBadge}
             </div>
           )}
@@ -67,7 +95,6 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
 
           <div className="detail-tabs">
             <button className={`tab-btn ${activeTab === 'equipment' ? 'active' : ''}`} onClick={() => setActiveTab('equipment')}>Equipment</button>
-            <button className={`tab-btn ${activeTab === 'inventory' ? 'active' : ''}`} onClick={() => setActiveTab('inventory')}>Detailed Inventory</button>
             <button className={`tab-btn ${activeTab === 'process' ? 'active' : ''}`} onClick={() => setActiveTab('process')}>Process Flow</button>
           </div>
 
@@ -78,17 +105,6 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
                   <li key={i}>{eq.name} <span className="eq-qty">{eq.qty}</span></li>
                 ))}
               </ul>
-            )}
-            
-            {activeTab === 'inventory' && (
-              <div className="inventory-view">
-                <p style={{ color: '#64748b', marginBottom: '16px', fontSize: '14px' }}>Full inventory details are available upon request.</p>
-                <ul className="equipment-list-simple">
-                  {cap.equipmentList.map((eq, i) => (
-                    <li key={i}>{eq.name} <span className="eq-qty">{eq.qty}</span></li>
-                  ))}
-                </ul>
-              </div>
             )}
 
             {activeTab === 'process' && (
@@ -112,7 +128,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
           </div>
 
           <button className="btn-primary detail-cta" onClick={() => onQuoteRequest(cap.drawerKey)}>
-            {cap.ctaText}
+            Enquery →
           </button>
         </div>
       </div>

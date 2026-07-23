@@ -43,7 +43,7 @@ export default function CapabilitiesOverview() {
             id: 'die-casting',
             specs: [
               ['Tonnage', '120T – 800T'],
-              ['Machines', '7 PDC Lines'],
+              ['Alloys', '-ADC12\n-AC2BF\nAluminium Alloys'],
             ],
             image: '/images/hpdc_cap.jpg',
           },
@@ -52,10 +52,10 @@ export default function CapabilitiesOverview() {
             title: t('vmc'),
             id: 'cnc-machining',
             specs: [
-              ['Centers', '3/4/5-axis'],
+              ['Centers', '4-axis VMC'],
               ['Make', 'HAAS USA'],
             ],
-            image: '/images/cnc_cap.jpg',
+            image: '/images/hpdc_cap.jpg',
           },
           {
             num: '03',
@@ -87,7 +87,7 @@ export default function CapabilitiesOverview() {
               {cap.specs.map(([l, v]) => (
                 <div className="cap-card__row" key={l}>
                   <span className="spec-label">{l}</span>
-                  <span className="spec-value">{v}</span>
+                  <span className="spec-value" style={{ whiteSpace: 'pre-line' }}>{v}</span>
                 </div>
               ))}
             </div>
